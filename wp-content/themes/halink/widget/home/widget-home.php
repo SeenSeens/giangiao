@@ -13,15 +13,22 @@ class WG_Home extends WP_Widget
     }
     function form($instance)
     { 
-        $defaults = array('page' => '', 'short' => '');
+        $defaults = array('page' => '');
         $instance = wp_parse_args($instance, $defaults);
         $page = esc_attr($instance['page']);
-        $short = esc_attr($instance['short']);
         ?>
         <p>
 			<!-- esc_html_e : Hiển thị văn bản dịch, nếu không có bản dịch văn bản gốc được hiển thị -->
 			<label for="<?= $this->get_field_id('page'); ?>"><?php esc_html_e( 'Bạn muốn trang nào được hiển thị ra ngoài?', 'halink' ); ?></label>
-			<input type="text" class="widefat" name="<?= $this->get_field_name('page'); ?>" id="<?= $this->get_field_id('page') ?>" value="<?= $page; ?>">
+            <select name="<?= $this->get_field_id('page'); ?>" id="<?= $this->get_field_id('page'); ?>" style='width:50%;margin-left:5px'>
+                <option value="">Bất kỳ</option>
+                <?php
+                $query = new WP_Query(array('post_type' => 'post'));
+                while ( $query->have_posts() ) : $query->the_post();
+                    ?><option value=""><?= the_title(); ?></option><?php
+                endwhile;
+                ?>
+            </select>
         </p>
         <?php
     }
