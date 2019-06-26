@@ -19,298 +19,255 @@ class WG_Slider extends WP_Widget
     {
         ?>
         <a class="nav-top-link">
-            <div class="slider-wrapper relative " id="slider-887304446">
-                <div class="slider slider-nav-circle slider-nav-large slider-nav-light slider-style-normal flickity-enabled is-draggable" data-flickity-options="{
-                    &quot;cellAlign&quot;: &quot;center&quot;,
-                    &quot;imagesLoaded&quot;: true,
-                    &quot;lazyLoad&quot;: 1,
-                    &quot;freeScroll&quot;: false,
-                    &quot;wrapAround&quot;: true,
-                    &quot;autoPlay&quot;: false,
-                    &quot;pauseAutoPlayOnHover&quot; : true,
-                    &quot;prevNextButtons&quot;: true,
-                    &quot;contain&quot; : true,
-                    &quot;adaptiveHeight&quot; : true,
-                    &quot;dragThreshold&quot; : 5,
-                    &quot;percentPosition&quot;: true,
-                    &quot;pageDots&quot;: true,
-                    &quot;rightToLeft&quot;: false,
-                    &quot;draggable&quot;: true,
-                    &quot;selectedAttraction&quot;: 0.1,
-                    &quot;parallax&quot; : 0,
-                    &quot;friction&quot;: 0.6        }" tabindex="0">
-                    <!-- .banner -->
-                    <!-- .banner -->
-                    <!-- .banner -->
-                    <!-- .banner -->
-                    <div class="flickity-viewport" style="height: 600px;">
-                        <div class="flickity-slider" style="left: 0px; transform: translateX(0%);">
-                            <div class="banner has-hover is-selected" id="banner-1820758363" style="position: absolute; left: 0%;">
-                                <div class="banner-inner fill">
-                                    <div class="banner-bg fill">
-                                        <div class="bg fill bg-fill  bg-loaded"></div>
-                                        <div class="overlay"></div>
-                                    </div>
-                                    <!-- bg-layers -->
-                                    <div class="banner-layers container">
-                                        <div class="fill banner-link"></div>
-                                        <div id="text-box-759758996" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
-                                            <div class="text dark">
-                                                <div class="text-inner text-center">
-                                                    <h2 class="uppercase thin-font" style="text-align: center;">KHÔNG CÓ CÔNG VIỆC NÀO QUÁ LỚN</h2>
-                                                    <h2 class="uppercase thin-font" style="text-align: center;">ĐỐI VỚI CHÚNG TÔI</h2>
-                                                </div>
-                                            </div>
-                                            <!-- text-box-inner -->
-                                            <style scope="scope">
-                                                #text-box-759758996 {
-                                                    width: 99%;
-                                                }
-
-                                                #text-box-759758996 .text {
-                                                    font-size: 100%;
-                                                }
-                                            </style>
-                                        </div>
-                                        <!-- text-box -->
-                                    </div>
-                                    <!-- .banner-layers -->
-                                </div>
-                                <!-- .banner-inner -->
-                                <style scope="scope">
-                                    #banner-1820758363 {
-                                        padding-top: 500px;
-                                    }
-
-                                    #banner-1820758363 .bg.bg-loaded {
-                                        background-image: url(http://giangiaophuhung.com/wp-content/uploads/2017/05/slider-homepage-color.jpg);
-                                    }
-
-                                    #banner-1820758363 .overlay {
-                                        background-color: rgba(0, 0, 0, 0.17);
-                                    }
-
-                                    #banner-1820758363 .bg {
-                                        background-position: 50% 58%;
-                                    }
-
-                                    @media (min-width:550px) {
-                                        #banner-1820758363 {
-                                            padding-top: 920px;
-                                        }
-                                    }
-
-                                    @media (min-width:850px) {
-                                        #banner-1820758363 {
-                                            padding-top: 600px;
-                                        }
-                                    }
-                                </style>
+            <div class="slider-wrapper relative " id="slider-10153879">
+                <div class="slider slider-nav-circle slider-nav-large slider-nav-light slider-style-normal" data-flickity-options='{
+                    "cellAlign": "center",
+                    "imagesLoaded": true,
+                    "lazyLoad": 1,
+                    "freeScroll": false,
+                    "wrapAround": true,
+                    "autoPlay": 6000,
+                    "pauseAutoPlayOnHover" : true,
+                    "prevNextButtons": true,
+                    "contain" : true,
+                    "adaptiveHeight" : true,
+                    "dragThreshold" : 5,
+                    "percentPosition": true,
+                    "pageDots": true,
+                    "rightToLeft": false,
+                    "draggable": true,
+                    "selectedAttraction": 0.1,
+                    "parallax" : 0,
+                    "friction": 0.6
+                }'>
+                    <div class="banner has-hover" id="banner-650490134">
+                        <div class="banner-inner fill">
+                            <div class="banner-bg fill">
+                                <div class="bg fill bg-fill "></div>
+                                <div class="overlay"></div>
                             </div>
-                            <div class="banner has-hover" id="banner-577277104" style="position: absolute; left: 100%;">
-                                <div class="banner-inner fill">
-                                    <div class="banner-bg fill">
-                                        <div class="bg fill bg-fill  bg-loaded"></div>
-                                        <div class="overlay"></div>
-                                    </div>
-                                    <!-- bg-layers -->
-                                    <div class="banner-layers container">
-                                        <div class="fill banner-link"></div>
-                                        <div id="text-box-1091420151" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
-                                            <div class="text dark">
-                                                <div class="text-inner text-center">
-                                                    <h2 class="uppercase thin-font" style="text-align: center;">SẢN PHẨM CHẤT LƯỢNG, AN TOÀN</h2>
-                                                    <h2 class="uppercase thin-font" style="text-align: center;">CHO MỌI CÔNG TRÌNH</h2>
-                                                </div>
-                                            </div>
-                                            <!-- text-box-inner -->
-                                            <style scope="scope">
-                                                #text-box-1091420151 {
-                                                    width: 99%;
-                                                }
-
-                                                #text-box-1091420151 .text {
-                                                    font-size: 100%;
-                                                }
-                                            </style>
+                            <!-- bg-layers -->
+                            <div class="banner-layers container">
+                                <div class="fill banner-link"></div>
+                                <div id="text-box-144505667" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                    <div class="text dark">
+                                        <div class="text-inner text-center">
+                                            <h2 class="uppercase thin-font" style="text-align: center;">KHÔNG CÓ CÔNG VIỆC NÀO QUÁ LỚN</h2>
+                                            <h2 class="uppercase thin-font" style="text-align: center;">ĐỐI VỚI CHÚNG TÔI</h2>
                                         </div>
-                                        <!-- text-box -->
                                     </div>
-                                    <!-- .banner-layers -->
+                                    <!-- text-box-inner -->
+                                    <style scope="scope">
+                                        #text-box-144505667 {
+                                            width: 99%;
+                                        }                                    
+                                        #text-box-144505667 .text {
+                                            font-size: 100%;
+                                        }
+                                    </style>
                                 </div>
-                                <!-- .banner-inner -->
-                                <style scope="scope">
-                                    #banner-577277104 {
-                                        padding-top: 500px;
-                                    }
-
-                                    #banner-577277104 .bg.bg-loaded {
-                                        background-image: url(http://giangiaophuhung.com/wp-content/uploads/2017/06/slider-homepage-color-2.jpg);
-                                    }
-
-                                    #banner-577277104 .overlay {
-                                        background-color: rgba(0, 0, 0, 0.17);
-                                    }
-
-                                    #banner-577277104 .bg {
-                                        background-position: 50% 58%;
-                                    }
-
-                                    @media (min-width:550px) {
-                                        #banner-577277104 {
-                                            padding-top: 920px;
-                                        }
-                                    }
-
-                                    @media (min-width:850px) {
-                                        #banner-577277104 {
-                                            padding-top: 600px;
-                                        }
-                                    }
-                                </style>
+                                <!-- text-box -->
                             </div>
-                            <div class="banner has-hover" id="banner-271581476" style="position: absolute; left: 200%;">
-                                <div class="banner-inner fill">
-                                    <div class="banner-bg fill">
-                                        <div class="bg fill bg-fill  bg-loaded"></div>
-                                        <div class="overlay"></div>
-                                    </div>
-                                    <!-- bg-layers -->
-                                    <div class="banner-layers container">
-                                        <div class="fill banner-link"></div>
-                                        <div id="text-box-681923441" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
-                                            <div class="text dark">
-                                                <div class="text-inner text-center">
-                                                    <h2 class="uppercase thin-font" style="text-align: center;">sáng tạo không ngừng làm nên sựmới mẻ và phát triển từng ngày</h2>
-                                                </div>
-                                            </div>
-                                            <!-- text-box-inner -->
-                                            <style scope="scope">
-                                                #text-box-681923441 {
-                                                    width: 99%;
-                                                }
-
-                                                #text-box-681923441 .text {
-                                                    font-size: 100%;
-                                                }
-                                            </style>
-                                        </div>
-                                        <!-- text-box -->
-                                    </div>
-                                    <!-- .banner-layers -->
-                                </div>
-                                <!-- .banner-inner -->
-                                <style scope="scope">
-                                    #banner-271581476 {
-                                        padding-top: 500px;
-                                    }
-
-                                    #banner-271581476 .bg.bg-loaded {
-                                        background-image: url(http://giangiaophuhung.com/wp-content/uploads/2017/10/slide-gian-giao-phu-hung-4.jpg);
-                                    }
-
-                                    #banner-271581476 .overlay {
-                                        background-color: rgba(0, 0, 0, 0.17);
-                                    }
-
-                                    #banner-271581476 .bg {
-                                        background-position: 50% 58%;
-                                    }
-
-                                    @media (min-width:550px) {
-                                        #banner-271581476 {
-                                            padding-top: 920px;
-                                        }
-                                    }
-
-                                    @media (min-width:850px) {
-                                        #banner-271581476 {
-                                            padding-top: 600px;
-                                        }
-                                    }
-                                </style>
-                            </div>
-                            <div class="banner has-hover" id="banner-1562938342" style="position: absolute; left: -100%;">
-                                <div class="banner-inner fill">
-                                    <div class="banner-bg fill">
-                                        <div class="bg fill bg-fill  bg-loaded"></div>
-                                        <div class="overlay"></div>
-                                    </div>
-                                    <!-- bg-layers -->
-                                    <div class="banner-layers container">
-                                        <div class="fill banner-link"></div>
-                                        <div id="text-box-946595069" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
-                                            <div class="text dark">
-                                                <div class="text-inner text-center">
-                                                    <h2 class="uppercase thin-font" style="text-align: center;">Bạn đang chọn đúng người để được phục vụ</h2>
-                                                </div>
-                                            </div>
-                                            <!-- text-box-inner -->
-                                            <style scope="scope">
-                                                #text-box-946595069 {
-                                                    width: 99%;
-                                                }
-
-                                                #text-box-946595069 .text {
-                                                    font-size: 100%;
-                                                }
-                                            </style>
-                                        </div>
-                                        <!-- text-box -->
-                                    </div>
-                                    <!-- .banner-layers -->
-                                </div>
-                                <!-- .banner-inner -->
-                                <style scope="scope">
-                                    #banner-1562938342 {
-                                        padding-top: 500px;
-                                    }
-
-                                    #banner-1562938342 .bg.bg-loaded {
-                                        background-image: url(http://giangiaophuhung.com/wp-content/uploads/2017/06/slide-gian-giao-phu-hung-2.jpg);
-                                    }
-
-                                    #banner-1562938342 .overlay {
-                                        background-color: rgba(0, 0, 0, 0.17);
-                                    }
-
-                                    #banner-1562938342 .bg {
-                                        background-position: 50% 58%;
-                                    }
-
-                                    @media (min-width:550px) {
-                                        #banner-1562938342 {
-                                            padding-top: 920px;
-                                        }
-                                    }
-
-                                    @media (min-width:850px) {
-                                        #banner-1562938342 {
-                                            padding-top: 600px;
-                                        }
-                                    }
-                                </style>
-                            </div>
+                            <!-- .banner-layers -->
                         </div>
+                        <!-- .banner-inner -->
+                        <style scope="scope">
+                            #banner-650490134 {
+                                padding-top: 500px;
+                            }                        
+                            #banner-650490134 .bg.bg-loaded {
+                                background: url("../wp-content/themes/halink/images/slider-homepage-color.jpg");
+                            }                       
+                            #banner-650490134 .overlay {
+                                background-color: rgba(0, 0, 0, 0.17);
+                            }                        
+                            #banner-650490134 .bg {
+                                background-position: 50% 58%;
+                            }                    
+                            @media (min-width:550px) {
+                                #banner-650490134 {
+                                    padding-top: 920px;
+                                }
+                            }                        
+                            @media (min-width:850px) {
+                                #banner-650490134 {
+                                    padding-top: 600px;
+                                }
+                            }
+                        </style>
                     </div>
-                    <button class="flickity-prev-next-button previous" type="button" aria-label="previous">
-                        <svg viewBox="0 0 100 100">
-                            <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path>
-                        </svg>
-                    </button>
-                    <button class="flickity-prev-next-button next" type="button" aria-label="next">
-                        <svg viewBox="0 0 100 100">
-                            <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
-                        </svg>
-                    </button>
-                    <ol class="flickity-page-dots">
-                        <li class="dot is-selected"></li>
-                        <li class="dot"></li>
-                        <li class="dot"></li>
-                        <li class="dot"></li>
-                    </ol>
+                    <!-- .banner -->
+                    <div class="banner has-hover" id="banner-771577459">
+                        <div class="banner-inner fill">
+                            <div class="banner-bg fill">
+                                <div class="bg fill bg-fill "></div>
+                                <div class="overlay"></div>
+                            </div>
+                            <!-- bg-layers -->
+                            <div class="banner-layers container">
+                                <div class="fill banner-link"></div>
+                                <div id="text-box-871447514" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                    <div class="text dark">
+                                        <div class="text-inner text-center">
+                                            <h2 class="uppercase thin-font" style="text-align: center;">SẢN PHẨM CHẤT LƯỢNG, AN TOÀN</h2>
+                                            <h2 class="uppercase thin-font" style="text-align: center;">CHO MỌI CÔNG TRÌNH</h2>
+                                        </div>
+                                    </div>
+                                    <!-- text-box-inner -->
+                                    <style scope="scope">
+                                        #text-box-871447514 {
+                                            width: 99%;
+                                        }                                    
+                                        #text-box-871447514 .text {
+                                            font-size: 100%;
+                                        }
+                                    </style>
+                                </div>
+                                <!-- text-box -->
+                            </div>
+                            <!-- .banner-layers -->
+                        </div>
+                        <!-- .banner-inner -->
+                        <style scope="scope">
+                            #banner-771577459 {
+                                padding-top: 500px;
+                            }                        
+                            #banner-771577459 .bg.bg-loaded {
+                                background-image: url(images/slider-homepage-color-2.jpg);
+                            }                       
+                            #banner-771577459 .overlay {
+                                background-color: rgba(0, 0, 0, 0.17);
+                            }                        
+                            #banner-771577459 .bg {
+                                background-position: 50% 58%;
+                            }                        
+                            @media (min-width:550px) {
+                                #banner-771577459 {
+                                    padding-top: 920px;
+                                }
+                            }                       
+                            @media (min-width:850px) {
+                                #banner-771577459 {
+                                    padding-top: 600px;
+                                }
+                            }
+                        </style>
+                    </div>
+                    <!-- .banner -->
+                    <div class="banner has-hover" id="banner-112397224">
+                        <div class="banner-inner fill">
+                            <div class="banner-bg fill">
+                                <div class="bg fill bg-fill "></div>
+                                <div class="overlay"></div>
+                            </div>
+                            <!-- bg-layers -->
+                            <div class="banner-layers container">
+                                <div class="fill banner-link"></div>
+                                <div id="text-box-1136467105" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                    <div class="text dark">
+                                        <div class="text-inner text-center">
+                                            <h2 class="uppercase thin-font" style="text-align: center;">sáng tạo không ngừng làm nên sựmới mẻ và phát triển từng ngày</h2>
+                                        </div>
+                                    </div>
+                                    <!-- text-box-inner -->
+                                    <style scope="scope">
+                                        #text-box-1136467105 {
+                                            width: 99%;
+                                        }                                   
+                                        #text-box-1136467105 .text {
+                                            font-size: 100%;
+                                        }
+                                    </style>
+                                </div>
+                                <!-- text-box -->
+                            </div>
+                            <!-- .banner-layers -->
+                        </div>
+                        <!-- .banner-inner -->
+                        <style scope="scope">
+                            #banner-112397224 {
+                                padding-top: 500px;
+                            }                       
+                            #banner-112397224 .bg.bg-loaded {
+                                background-image: url(images/slide-gian-giao-phu-hung-4.jpg);
+                            }                        
+                            #banner-112397224 .overlay {
+                                background-color: rgba(0, 0, 0, 0.17);
+                            }                       
+                            #banner-112397224 .bg {
+                                background-position: 50% 58%;
+                            }                       
+                            @media (min-width:550px) {
+                                #banner-112397224 {
+                                    padding-top: 920px;
+                                }
+                            }                        
+                            @media (min-width:850px) {
+                                #banner-112397224 {
+                                    padding-top: 600px;
+                                }
+                            }
+                        </style>
+                    </div>
+                    <!-- .banner -->
+                    <div class="banner has-hover" id="banner-1728304443">
+                        <div class="banner-inner fill">
+                            <div class="banner-bg fill">
+                                <div class="bg fill bg-fill "></div>
+                                <div class="overlay"></div>
+                            </div>
+                            <!-- bg-layers -->
+                            <div class="banner-layers container">
+                                <div class="fill banner-link"></div>
+                                <div id="text-box-1839619984" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                    <div class="text dark">
+                                        <div class="text-inner text-center">
+                                            <h2 class="uppercase thin-font" style="text-align: center;">Bạn đang chọn đúng người để được phục vụ</h2>
+                                        </div>
+                                    </div>
+                                    <!-- text-box-inner -->
+                                    <style scope="scope">
+                                        #text-box-1839619984 {
+                                            width: 99%;
+                                        }                                    
+                                        #text-box-1839619984 .text {
+                                            font-size: 100%;
+                                        }
+                                    </style>
+                                </div>
+                                <!-- text-box -->
+                            </div>
+                            <!-- .banner-layers -->
+                        </div>
+                        <!-- .banner-inner -->
+                        <style scope="scope">
+                            #banner-1728304443 {
+                                padding-top: 500px;
+                            }
+                            #banner-1728304443 .bg.bg-loaded {
+                                background-image: url(images/slide-gian-giao-phu-hung-2.jpg);
+                            }                        
+                            #banner-1728304443 .overlay {
+                                background-color: rgba(0, 0, 0, 0.17);
+                            }                       
+                            #banner-1728304443 .bg {
+                                background-position: 50% 58%;
+                            }                        
+                            @media (min-width:550px) {
+                                #banner-1728304443 {
+                                    padding-top: 920px;
+                                }
+                            }                        
+                            @media (min-width:850px) {
+                                #banner-1728304443 {
+                                    padding-top: 600px;
+                                }
+                            }
+                        </style>
+                    </div>
+                    <!-- .banner -->
                 </div>
-                <div class="loading-spin dark large centered" style="display: none;"></div>
+                <div class="loading-spin dark large centered"></div>
                 <style scope="scope">
                 </style>
             </div>

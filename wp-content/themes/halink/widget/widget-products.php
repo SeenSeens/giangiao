@@ -4,7 +4,7 @@ class WG_Products extends WP_Widget
     function __construct()
     { 
         $widget_ops = array(
-			'classname'                   => 'widget_Products',
+			'classname'                   => 'widget_products',
 			'description'                 => __( 'Products' ),
 			'customize_selective_refresh' => true,
 		);
