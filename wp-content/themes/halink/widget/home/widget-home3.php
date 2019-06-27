@@ -76,6 +76,131 @@ class WG_Home3 extends WP_Widget
     }
     function widget($args, $instance)
     { 
-        
+        extract($args);
+        $title = apply_filters('widget_title', $instance['title']);
+        $categories = apply_filters('widget_categories', $instance['categories']);
+		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
+		if ( ! $number ) {
+			$number = 5;
+        }
+        $query = new WP_Query(array(
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'cat' => $categories,
+            'orderby' => 'ID',
+            'order' => 'DESC',
+            'posts_per_page' => $number
+        ));
+        ?>
+        <div class="vc_row wpb_row vc_row-fluid ult-vc-hide-row vc_row-has-fill" data-rtl="false" style="position: relative;" data-row-effect-mobile-disable="true">
+            <div class="upb_row_bg" data-bg-override="full" style="background: rgb(252, 252, 252); min-width: 1349px; left: -87px; width: 1349px;"></div>
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner ">
+                    <div class="wpb_wrapper">
+                        <h2 style="font-size: 23px;color: #327d57;line-height: 1.3;text-align: center;font-family:Roboto Condensed;font-weight:700;font-style:normal" class="vc_custom_heading vc_custom_1500716390814"><?= $title; ?></h2>
+                        <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1495882421358">
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner ">
+                                    <div class="wpb_wrapper">
+                                        <div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_30 vc_sep_shadow vc_sep_pos_align_center vc_separator_no_text vc_sep_color_chino"><span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line"></span></span></div>
+                                        <div class="wpb_text_column wpb_content_element  tat">
+                                            <div class="wpb_wrapper">
+                                                <p><span style="font-family: tahoma, arial, helvetica, sans-serif;">Đối tác của chúng tôi không những các công trình trong nước mà còn là những công trình trọng điểm ở nước ngoài. Đây là kết quả của quá trình phấn đấu và không ngừng nỗ lực của tập thể công nhân viên cũng như sự quản lý, cùng những ý tưởng đột phá, ứng dụng công nghệ trong sản xuất của ban lãnh đạo công ty.</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- vc_grid start -->
+                        <div class="vc_grid-container-wrapper vc_clearfix">
+                            <div class="vc_grid-container vc_clearfix wpb_content_element vc_basic_grid" data-initial-loading-animation="fadeIn" data-vc-grid-settings="{&quot;page_id&quot;:4,&quot;style&quot;:&quot;pagination&quot;,&quot;action&quot;:&quot;vc_get_vc_grid_data&quot;,&quot;shortcode_id&quot;:&quot;1509191486007-88e05767-71b7-0&quot;,&quot;items_per_page&quot;:&quot;4&quot;,&quot;auto_play&quot;:false,&quot;gap&quot;:30,&quot;speed&quot;:-1000,&quot;loop&quot;:&quot;&quot;,&quot;animation_in&quot;:&quot;&quot;,&quot;animation_out&quot;:&quot;&quot;,&quot;arrows_design&quot;:&quot;none&quot;,&quot;arrows_color&quot;:&quot;blue&quot;,&quot;arrows_position&quot;:&quot;inside&quot;,&quot;paging_design&quot;:&quot;radio_dots&quot;,&quot;paging_color&quot;:&quot;grey&quot;,&quot;tag&quot;:&quot;vc_basic_grid&quot;}" data-vc-request="http://giangiaophuhung.com/wp-admin/admin-ajax.php" data-vc-post-id="4" data-vc-public-nonce="a2f490de42">
+                                <div class="vc_grid-loading" style="display: none;"></div>
+                                <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1497675458847{background-color: #f9f9f9 !important;}.vc_custom_1497675477789{margin-right: 5px !important;margin-left: 5px !important;}</style>
+                                <style type="text/css">
+                                    img.wp-smiley,
+                                    img.emoji {
+                                    display: inline !important;
+                                    border: none !important;
+                                    box-shadow: none !important;
+                                    height: 1em !important;
+                                    width: 1em !important;
+                                    margin: 0 .07em !important;
+                                    vertical-align: -0.1em !important;
+                                    background: none !important;
+                                    padding: 0 !important;
+                                    }
+                                </style>
+                                <div class="vc_grid vc_row vc_grid-gutter-30px vc_pageable-wrapper vc_hook_hover owl-carousel vc_grid-owl-theme owl-loaded owl-drag" data-vc-pageable-content="true">
+                                    <div class="owl-stage-outer owl-height" style="height: 413px;">
+                                        <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px);transition: all 0s ease 0s;width: 100%;">                                        
+                                            <div class="owl-item" style="width: 1145px; margin-right: 10px;">
+                                                <div id="owl-demo" class="owl-carousel vc_pageable-slide-wrapper">
+                                                <?php
+                                                while($query->have_posts()) : $query->the_post();
+                                                $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'post-thumbnail' );
+                                                ?>
+                                                    <div class="vc_grid-item vc_clearfix vc_col-sm-3 vc_grid-item-zone-c-bottom vc_visible-item fadeIn animated">
+                                                        <div class="vc_grid-item-mini vc_clearfix">
+                                                            <div class="vc_gitem-animated-block ">
+                                                                <div class="vc_gitem-zone vc_gitem-zone-a vc-gitem-zone-height-mode-auto vc-gitem-zone-height-mode-auto-1-1 vc_gitem-is-link" style="background-image: url('<?php echo $thumb['0']; ?>') !important;">
+                                                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="vc_gitem-link vc-zone-link"></a>
+                                                                    <?php the_post_thumbnail('post-thumbnail', [
+                                                                        'class' => 'vc_gitem-zone-img',
+                                                                        //'data-src' => ''
+                                                                    ])?>	
+                                                                    <div class="vc_gitem-zone-mini">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="vc_gitem-zone vc_gitem-zone-c vc_custom_1497675458847">
+                                                                <div class="vc_gitem-zone-mini">
+                                                                    <div class="vc_gitem_row vc_row vc_gitem-row-position-top">
+                                                                        <div class="vc_col-sm-12 vc_gitem-col vc_gitem-col-align-">
+                                                                            <div class="vc_custom_heading vc_custom_1497675477789 vc_gitem-post-data vc_gitem-post-data-source-post_title">
+                                                                                <h4 style="text-align: left"><?php the_title(); ?></h4>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vc_clearfix"></div>
+                                                    </div>
+                                                <?php endwhile; ?>
+                                                </div>
+                                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                                                <script>
+                                                $(document).ready(function() { 
+                                                    $("#owl-demo").owlCarousel({
+                                                        autoPlay: 3000, //Set AutoPlay to 3 seconds
+                                                        items : 4,
+                                                        itemsDesktop : [1199,3],
+                                                        itemsDesktopSmall : [979,3]
+                                                    });
+                                                });
+                                                </script>
+                                            </div>                                       
+                                        </div>
+                                    </div>
+                                    <div class="vc_grid-owl-nav vc_grid-owl-nav-color-blue">
+                                        <div class="vc_grid-owl-prev none vc_grid-nav-prev-inside disabled"></div>
+                                        <div class="vc_grid-owl-next none vc_grid-nav-next-inside"></div>
+                                    </div>
+                                    <div class="vc_grid-owl-dots vc_grid-radio_dots vc_grid-owl-dots-color-grey">
+                                        <div class="vc_grid-owl-dot active"><span></span></div>
+                                        <div class="vc_grid-owl-dot"><span></span></div>
+                                        <div class="vc_grid-owl-dot"><span></span></div>
+                                        <div class="vc_grid-owl-dot"><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- vc_grid end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
     }
 }
