@@ -14,12 +14,17 @@ class WG_Home2 extends WP_Widget {
     {
         $instance = wp_parse_args($instance);
         $title     = isset($instance['title']) ? esc_attr($instance['title']) : '';
+        $describe     = isset($instance['describe']) ? esc_attr($instance['describe']) : '';
         $categories     = isset($instance['categories']) ? esc_attr($instance['categories']) : '';
         $number    = isset($instance['number']) ? absint($instance['number']) : 5;
         ?>
         <p>
             <label for="<?= $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
             <input class="widefat" id="<?= $this->get_field_id('title'); ?>" name="<?= $this->get_field_name('title'); ?>" type="text" value="<?= $title; ?>" />
+        </p>
+        <p>
+            <label for="<?= $this->get_field_id('describe'); ?>"><?php esc_html_e( 'Mô tả ngắn', 'halink' ); ?></label>
+            <textarea class="widefat" name="<?= $this->get_field_name('describe'); ?>" id="<?= $this->get_field_id('describe'); ?>" cols="30" rows="10"><?= $describe; ?></textarea>
         </p>
         <p>
             <label for="<?= $this->get_field_id('categories'); ?>"><?php _e('Categories:'); ?></label>
@@ -63,6 +68,7 @@ class WG_Home2 extends WP_Widget {
     {
         $instance              = $old_instance;
         $instance['title']     = sanitize_text_field($new_instance['title']);
+        $instance['describe']     = sanitize_text_field($new_instance['describe']);
         $instance['categories'] = $_POST[$this->get_field_id('categories')];
         $instance['number']    = (int)$new_instance['number'];
         return $instance;
@@ -71,6 +77,7 @@ class WG_Home2 extends WP_Widget {
     {
         extract($args);
         $title = apply_filters('widget_title', $instance['title']);
+        $describe = apply_filters('widget_describe', $instance['describe']);
         $categories = apply_filters('widget_categories', $instance['categories']);
 		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
 		if ( ! $number ) {
@@ -104,9 +111,9 @@ class WG_Home2 extends WP_Widget {
                                         <h2 style="font-size: 33px;color: #327d57;line-height: 1.3;text-align: center;font-family:Roboto Condensed;font-weight:400;font-style:normal" class="vc_custom_heading sanpham vc_custom_1498134269344"><?= $title; ?></h2>
                                         <div class="wpb_text_column wpb_content_element  tat">
                                             <div class="wpb_wrapper">
-                                                <p style="text-align: center;"><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #333333;"><span style="color: #339966;">Với hệ thống máy móc hiện đại cùng đội ngũ công nhân, kỹ sư tay nghề cao, giàu kinh nghiệm &#8211; Sản phẩm của</span>                                                                        <span style="color: #58925b;">PHÚ HƯNG</span> <span style="color: #339966;">được sản xuất trên nền công nghệ hiện đại, chất lượng luôn đạt chuẩn ở mọi giai đoạn sản xuất nhằm đảm bảo sản phẩm của mình an toàn cho mọi người, mọi công trình và thân thiện với môi trường.</span></span>
+                                                <p style="text-align: center;">
+                                                <span style="font-family: tahoma, arial, helvetica, sans-serif; color: #333333;"><?= $describe; ?></span>
                                                 </p>
-
                                             </div>
                                         </div>
                                     </div>

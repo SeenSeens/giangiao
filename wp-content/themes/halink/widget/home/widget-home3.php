@@ -25,7 +25,7 @@ class WG_Home3 extends WP_Widget
         </p>
         <p>
             <label for="<?= $this->get_field_id('describe'); ?>"><?php esc_html_e( 'Mô tả ngắn', 'halink' ); ?></label>
-            <textarea class="widefat" name="<?= $this->get_field_name('describe'); ?>" id="<?= $this->get_field_id('describe'); ?>" cols="30" rows="10"></textarea>
+            <textarea class="widefat" name="<?= $this->get_field_name('describe'); ?>" id="<?= $this->get_field_id('describe'); ?>" cols="30" rows="10"><?= $describe; ?></textarea>
         </p>
         <p>
             <label for="<?= $this->get_field_id('categories'); ?>"><?php esc_html_e( 'Chọn chuyên mục', 'halink' ); ?></label>
@@ -78,6 +78,7 @@ class WG_Home3 extends WP_Widget
     { 
         extract($args);
         $title = apply_filters('widget_title', $instance['title']);
+        $describe = apply_filters('widget_describe', $instance['describe']);
         $categories = apply_filters('widget_categories', $instance['categories']);
 		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
 		if ( ! $number ) {
@@ -105,7 +106,7 @@ class WG_Home3 extends WP_Widget
                                         <div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_30 vc_sep_shadow vc_sep_pos_align_center vc_separator_no_text vc_sep_color_chino"><span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line"></span></span></div>
                                         <div class="wpb_text_column wpb_content_element  tat">
                                             <div class="wpb_wrapper">
-                                                <p><span style="font-family: tahoma, arial, helvetica, sans-serif;">Đối tác của chúng tôi không những các công trình trong nước mà còn là những công trình trọng điểm ở nước ngoài. Đây là kết quả của quá trình phấn đấu và không ngừng nỗ lực của tập thể công nhân viên cũng như sự quản lý, cùng những ý tưởng đột phá, ứng dụng công nghệ trong sản xuất của ban lãnh đạo công ty.</span></p>
+                                                <p><span style="font-family: tahoma, arial, helvetica, sans-serif;"><?= $describe; ?></span></p>
                                             </div>
                                         </div>
                                     </div>
@@ -135,18 +136,18 @@ class WG_Home3 extends WP_Widget
                                     <div class="owl-stage-outer owl-height" style="height: 413px;">
                                         <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px);transition: all 0s ease 0s;width: 100%;">                                        
                                             <div class="owl-item" style="width: 1145px; margin-right: 10px;">
-                                                <div id="owl-demo" class="owl-carousel vc_pageable-slide-wrapper">
+                                                <div id="owl-demo" class="vc_pageable-slide-wrapper">
                                                 <?php
                                                 while($query->have_posts()) : $query->the_post();
                                                 $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'post-thumbnail' );
                                                 ?>
-                                                    <div class="vc_grid-item vc_clearfix vc_col-sm-3 vc_grid-item-zone-c-bottom vc_visible-item fadeIn animated">
+                                                    <div class="lazyOwl vc_grid-item vc_clearfix vc_col-sm-3 vc_grid-item-zone-c-bottom vc_visible-item fadeIn animated">
                                                         <div class="vc_grid-item-mini vc_clearfix">
                                                             <div class="vc_gitem-animated-block ">
                                                                 <div class="vc_gitem-zone vc_gitem-zone-a vc-gitem-zone-height-mode-auto vc-gitem-zone-height-mode-auto-1-1 vc_gitem-is-link" style="background-image: url('<?php echo $thumb['0']; ?>') !important;">
                                                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="vc_gitem-link vc-zone-link"></a>
                                                                     <?php the_post_thumbnail('post-thumbnail', [
-                                                                        'class' => 'vc_gitem-zone-img',
+                                                                        'class' => 'vc_gitem-zone-img lazyOwl',
                                                                         //'data-src' => ''
                                                                     ])?>	
                                                                     <div class="vc_gitem-zone-mini">
@@ -171,14 +172,13 @@ class WG_Home3 extends WP_Widget
                                                 </div>
                                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
                                                 <script>
-                                                $(document).ready(function() { 
-                                                    $("#owl-demo").owlCarousel({
-                                                        autoPlay: 3000, //Set AutoPlay to 3 seconds
-                                                        items : 4,
-                                                        itemsDesktop : [1199,3],
-                                                        itemsDesktopSmall : [979,3]
-                                                    });
-                                                });
+                                                // $(document).ready(function() {
+                                                //     $("#owl-demo").owlCarousel({
+                                                //         items : 4,
+                                                //         lazyLoad : true,
+                                                //         navigation : true
+                                                //     }); 
+                                                // });
                                                 </script>
                                             </div>                                       
                                         </div>

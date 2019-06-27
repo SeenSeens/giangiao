@@ -12,20 +12,24 @@ class WG_Home extends WP_Widget
         $this->alt_option_name = 'WG_Home';
     }
     function form($instance)
-    { 
-        $defaults = array('page' => '');
-        $instance = wp_parse_args($instance, $defaults);
-        $page = esc_attr($instance['page']);
+    {
+        $instance = wp_parse_args($instance);
+        $page     = isset($instance['page']) ? esc_attr($instance['page']) : '';
         ?>
         <p>
 			<!-- esc_html_e : Hiển thị văn bản dịch, nếu không có bản dịch văn bản gốc được hiển thị -->
 			<label for="<?= $this->get_field_id('page'); ?>"><?php esc_html_e( 'Bạn muốn trang nào được hiển thị ra ngoài?', 'halink' ); ?></label>
-            <select name="<?= $this->get_field_id('page'); ?>" id="<?= $this->get_field_id('page'); ?>" style='width:50%;margin-left:5px'>
+            <select name="<?= $this->get_field_name('page'); ?>" id="<?= $this->get_field_id('page'); ?>" style='width:50%;margin-left:5px'>
                 <option value="">Bất kỳ</option>
                 <?php
-                $query = new WP_Query(array('post_type' => 'page'));
+                $agrs = array('post_type' => 'page');
+                $query = new WP_Query($agrs);
                 while ( $query->have_posts() ) : $query->the_post();
-                    ?><option value=""><?= the_title(); ?></option><?php
+                    $sl = "";
+                    echo "<option value=\"" . "\" $sl>" . get_the_title() . "</option>";
+                ?>
+                
+                <?php
                 endwhile;
                 ?>
             </select>
@@ -35,13 +39,13 @@ class WG_Home extends WP_Widget
     function update($new_instance, $old_instance)
     { 
         $instance = $old_instance;
-        $instance['title'] = $new_instance['title'];
+        $instance['page'] = $_POST[$this->get_field_id('page')];    
         return $instance;
     }
     function widget($args, $instance)
     {
         extract($args);
-        $title = apply_filters( 'widget_title', $instance['title'] );
+        $page = apply_filters('widget_page', $instance['page'] );
         ?>
         <div class="vc_row wpb_row vc_row-fluid">
             <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -53,7 +57,7 @@ class WG_Home extends WP_Widget
                             <div class="vc_column-inner ">
                                 <div class="wpb_wrapper">
                                     <div class="vc_empty_space" style="height: 35px"><span class="vc_empty_space_inner"></span></div>
-                                    <p style="font-size: 28px;color: #327d57;line-height: 1.3;text-align: left;font-family:Roboto Condensed;font-weight:700;font-style:normal" class="vc_custom_heading vc_custom_1497023187534">GIỚI THIỆU</p>
+                                    <p style="font-size: 28px;color: #327d57;line-height: 1.3;text-align: left;font-family:Roboto Condensed;font-weight:700;font-style:normal" class="vc_custom_heading vc_custom_1497023187534"><?php the_title(); ?></p>
                                     <div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_10 vc_sep_pos_align_left vc_separator_no_text vc_sep_color_grey"><span class="vc_sep_holder vc_sep_holder_l"><span  class="vc_sep_line"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span  class="vc_sep_line"></span></span>
                                     </div>
                                     <div class="wpb_text_column wpb_content_element ">

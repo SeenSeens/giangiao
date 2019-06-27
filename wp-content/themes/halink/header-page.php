@@ -9,9 +9,9 @@
 
 <body <?php body_class(); ?>>
     <div id="wrapper">
-        <header id="header" class="header transparent has-transparent has-sticky sticky-jump">
+        <header id="header" class="header has-sticky sticky-jump">
             <div class="header-wrapper">
-                <div id="masthead" class="header-main nav-dark toggle-nav-dark">
+                <div id="masthead" class="header-main">
                     <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
                         <!-- Logo -->
                         <div id="logo" class="flex-col logo">
@@ -21,7 +21,7 @@
                             $custom_logo_url = wp_get_attachment_image_url($custom_logo_id, 'full' );
                             ?>
                             <a href="<?php bloginfo( 'url' ); ?>">
-                                <img src="<?= esc_url( $custom_logo_url ); ?>" class="img-responsive">
+                                <img src="<?= esc_url( $custom_logo_url ); ?>" class="img-responsive header_logo header-logo">
                             </a>
                         </div>
                         <!-- Mobile Left Elements -->
