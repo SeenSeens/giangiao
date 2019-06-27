@@ -23,7 +23,7 @@ class WG_Home extends WP_Widget
             <select name="<?= $this->get_field_id('page'); ?>" id="<?= $this->get_field_id('page'); ?>" style='width:50%;margin-left:5px'>
                 <option value="">Bất kỳ</option>
                 <?php
-                $query = new WP_Query(array('post_type' => 'post'));
+                $query = new WP_Query(array('post_type' => 'page'));
                 while ( $query->have_posts() ) : $query->the_post();
                     ?><option value=""><?= the_title(); ?></option><?php
                 endwhile;
