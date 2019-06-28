@@ -814,6 +814,8 @@ require_once get_parent_theme_file_path('/widget/home/widget-home4.php');
 require_once get_parent_theme_file_path('/widget/home/widget-home5.php');
 // Sider Bar
 require_once get_parent_theme_file_path('/widget/sidebar/widget-consulting.php');
+require_once get_parent_theme_file_path('/widget/sidebar/widget-media.php');
+require_once get_parent_theme_file_path('/widget/sidebar/widget-latest.php');
 if (!file_exists('halink_widget')) {
 	function halink_widget() {
 		register_widget('WG_Slider');
@@ -832,6 +834,8 @@ if (!file_exists('halink_widget')) {
         register_widget('WG_Home5');
         // Side Bar
         register_widget('WG_Consulting');
+        register_widget('WG_Media');
+        register_widget('WG_Latest');
 	}
 	add_action('widgets_init', 'halink_widget');
 }
