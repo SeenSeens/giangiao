@@ -12,7 +12,7 @@
         <header id="header" class="header has-sticky sticky-jump">
             <div class="header-wrapper">
                 <div id="masthead" class="header-main">
-                    <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
+                    <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation" style="padding-left:0px; padding-right:0px;">
                         <!-- Logo -->
                         <div id="logo" class="flex-col logo">
                             <!-- Header logo -->

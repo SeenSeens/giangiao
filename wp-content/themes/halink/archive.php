@@ -15,10 +15,9 @@
 					</header><!-- .archive-page-header -->
 				</a>
 				<?php
-				while ( have_posts() ) :
-					the_post();
-					get_template_part( 'template-parts/content', get_post_type() );
-				endwhile;
+				if(get_field('chuyen_muc','category_'.get_queried_object_id()) == '1') {
+					require_once get_parent_theme_file_path( 'template-parts/category/sidebar-right.php' );
+				}
 					the_posts_navigation();
 				else :
 					get_template_part( 'template-parts/content', 'none' );
@@ -27,5 +26,4 @@
 		</div>
 	</main><!-- #main -->
 <?php
-get_sidebar();
 get_footer();

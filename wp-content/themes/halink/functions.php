@@ -1,7 +1,5 @@
 <?php
-
 if ( ! function_exists( 'halink_setup' ) ) :
-
 	function halink_setup() {
 
 		load_theme_textdomain( 'halink', get_template_directory() . '/languages' );
@@ -47,11 +45,6 @@ if ( ! function_exists( 'halink_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
 		add_theme_support( 'custom-logo', array(
 			'flex-width'  => true,
 			'flex-height' => true,
@@ -60,35 +53,21 @@ if ( ! function_exists( 'halink_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'halink_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
 function halink_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+
 	$GLOBALS['content_width'] = apply_filters( 'halink_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'halink_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
 function halink_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'halink' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'halink' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Index', 'halink' ),
@@ -124,6 +103,7 @@ add_action( 'widgets_init', 'halink_widgets_init' );
  * Enqueue scripts and styles.
  */
 function halink_scripts() {
+    wp_enqueue_style( 'halink-style', get_stylesheet_uri() );
 	?>
 	<script type='application/ld+json'>
 	{
@@ -195,7 +175,6 @@ function halink_scripts() {
         }
     </style>
 	<?php
-	wp_enqueue_style( 'halink-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '3.4.1', true );
 	wp_enqueue_style( 'flatsome-icons', get_template_directory_uri().'/assets/css/fl-icons6de8.css', 'all' );
 	wp_enqueue_style( 'composer_front', get_template_directory_uri().'/plugins/js_composer/assets/css/js_composer.min3c21.css', 'all' );
@@ -833,6 +812,8 @@ require_once get_parent_theme_file_path('/widget/home/widget-home2.php');
 require_once get_parent_theme_file_path('/widget/home/widget-home3.php');
 require_once get_parent_theme_file_path('/widget/home/widget-home4.php');
 require_once get_parent_theme_file_path('/widget/home/widget-home5.php');
+// Sider Bar
+require_once get_parent_theme_file_path('/widget/sidebar/widget-consulting.php');
 if (!file_exists('halink_widget')) {
 	function halink_widget() {
 		register_widget('WG_Slider');
@@ -849,6 +830,8 @@ if (!file_exists('halink_widget')) {
         register_widget('WG_Home3');
         register_widget('WG_Home4');
         register_widget('WG_Home5');
+        // Side Bar
+        register_widget('WG_Consulting');
 	}
 	add_action('widgets_init', 'halink_widget');
 }
@@ -893,3 +876,14 @@ function short_title($after = '', $length) {
     }
     return $qdztitle;
 }
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 10;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
