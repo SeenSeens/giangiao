@@ -891,3 +891,6 @@ function wpdocs_custom_excerpt_length( $length ) {
     return 10;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+// Enable shortcodes in text widgets
+add_filter('widget_text','do_shortcode');

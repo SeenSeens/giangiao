@@ -112,12 +112,7 @@ if ( ! function_exists( 'halink_entry_footer' ) ) :
 endif;
 
 if ( ! function_exists( 'halink_post_thumbnail' ) ) :
-	/**
-	 * Displays an optional post thumbnail.
-	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
-	 */
+
 	function halink_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;

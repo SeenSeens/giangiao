@@ -11,35 +11,44 @@ class WG_Footer3 extends WP_Widget
 		parent::__construct( 'footer3', __( 'Chân trang 3' ), $widget_ops );
         $this->alt_option_name = 'WG_Footer3';
     }
+    function form($instance)
+    {
+        $defaults = array('title' => '', 'url' => '');
+        $instance = wp_parse_args($instance, $defaults);
+        $title = esc_attr($instance['title']);
+        $url = esc_attr($instance['url']);
+        ?>
+        <p>
+			<label for="<?= $this->get_field_id('title'); ?>"><?php esc_html_e( 'Tiêu đề', 'halink' ); ?></label>
+			<input type="text" class="widefat" name="<?= $this->get_field_name('title'); ?>" id="<?= $this->get_field_id('title') ?>" value="<?= $title; ?>">
+        </p>
+        <p>
+			<label for="<?= $this->get_field_id('url'); ?>"><?php esc_html_e( 'Short code', 'halink' ); ?></label>
+			<input type="text" class="widefat" name="<?= $this->get_field_name('url'); ?>" id="<?= $this->get_field_id('url') ?>" value="<?= $url; ?>">
+        </p>
+        <?php
+    }
+    function update($new_instance, $old_instance)
+    {
+        $instance = $old_instance;
+        $instance['title'] = $new_instance['title'];
+        $instance['url'] = $new_instance['url'];
+        return $instance;
+    }
     function widget($args, $instance)
     {
+        extract($args);
+        $title = apply_filters( 'widget_title', $instance['title'] );
+        $url = apply_filters( 'widget_url', $instance['url'] );
         ?>
         <div class="col medium-4 small-12 large-3">
             <div class="col-inner">
-                <h4 class="uppercase">YÊU CẦU BÁO GIÁ</h4>
+                <h4 class="uppercase"><?= $title; ?></h4>
                 <div class="text-center">
                     <div class="is-divider divider clearfix" style="max-width:1005px;background-color:rgb(15, 116, 188);"></div>
                 </div>
                 <!-- .divider -->
-                <div role="form" class="wpcf7" id="wpcf7-f122-o1" lang="vi" dir="ltr">
-                    <div class="screen-reader-response"></div>
-                    <form action="http://giangiaophuhung.com/#wpcf7-f122-o1" method="post" class="wpcf7-form" novalidate="novalidate">
-                        <div style="display: none;">
-                            <input type="hidden" name="_wpcf7" value="122" />
-                            <input type="hidden" name="_wpcf7_version" value="4.9.1" />
-                            <input type="hidden" name="_wpcf7_locale" value="vi" />
-                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f122-o1" />
-                            <input type="hidden" name="_wpcf7_container_post" value="0" />
-                        </div>
-                        <p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ và tên (*)" /></span> </p>
-                        <p><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email (*)" /></span> </p>
-                        <p><span class="wpcf7-form-control-wrap your-phone"><input type="text" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Số điện thoại" /></span> </p>
-                        <p><span class="wpcf7-form-control-wrap your-message"><input type="text" name="your-message" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Lời nhắn" /></span> </p>
-                        <p><input type="hidden" name="_wpcf7_captcha_challenge_captcha-1" value="1144177186" /><img class="wpcf7-form-control wpcf7-captchac wpcf7-captcha-captcha-1" width="72" height="24" alt="captcha" src="wp-content/uploads/wpcf7_captcha/1144177186.png" /> <span class="wpcf7-form-control-wrap captcha-1"><input type="text" name="captcha-1" value="" size="40" class="wpcf7-form-control wpcf7-captchar" autocomplete="off" aria-invalid="false" placeholder="Nhập mã xác nhận (*)" /></span><br />
-                            <input type="submit" value="Gửi thông tin" class="wpcf7-form-control wpcf7-submit" /></p>
-                        <div class="wpcf7-response-output wpcf7-display-none"></div>
-                    </form>
-                </div>
+                <?php echo do_shortcode("$url"); ?>
             </div>
         </div>
         <?php

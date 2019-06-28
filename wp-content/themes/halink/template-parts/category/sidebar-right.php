@@ -23,8 +23,8 @@
                                 </div><!-- .box-text -->
                                 <div class="badge absolute top post-date badge-circle-inside">
                                     <div class="badge-inner">
-                                        <span class="post-date-day"><?= get_the_date('d');?></span><br>
-                                        <span class="post-date-month is-xsmall"><?= get_the_date('M'); ?></span>
+                                        <span class="post-date-day"><?= get_the_modified_date('d');?></span><br>
+                                        <span class="post-date-month is-xsmall"><?= get_the_modified_date('M'); ?></span>
                                     </div>
                                 </div>
                             </div><!-- .box -->
