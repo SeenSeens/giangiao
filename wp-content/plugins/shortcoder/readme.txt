@@ -3,11 +3,11 @@ Contributors: vaakash
 Author URI: https://www.aakashweb.com/
 Plugin URI: https://www.aakashweb.com/wordpress-plugins/shortcoder/
 Tags: shortcode, html, javascript, shortcodes, short code, posts, pages, widgets, insert, adsense, ads, snippets,
-Donate link: https://goo.gl/qMF3iE
+Donate link: https://www.paypal.me/vaakash/6
 License: GPLv2 or later
 Requires at least: 4.4.0
-Tested up to: 5.2
-Stable tag: 4.4
+Tested up to: 5.2.2
+Stable tag: 4.5
 
 Create custom "Shortcodes" easily for HTML, JavaScript snippets and use the shortcodes within posts, pages & widgets.
 
@@ -90,6 +90,10 @@ Note: When you disable a shortcode, the shortcode will not be executed in the pa
 [More Screenshots](https://www.aakashweb.com/wordpress-plugins/shortcoder/)
 
 == Changelog ==
+
+= 4.5 =
+* Fix: Copy shortcode box having incorrect width.
+* Fix: Codemirror has been updated to latest version.
 
 = 4.4 =
 * New: Insert shortcode automatically adds "closing tag" if the shortcode has enclosed content parameter.

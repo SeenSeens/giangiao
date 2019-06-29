@@ -43,7 +43,7 @@ if ( ! function_exists( 'halink_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'halink' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="meta-author author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -122,7 +122,10 @@ if ( ! function_exists( 'halink_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail('post_thumbnail', [
+					'class' => 'attachment-large size-large wp-post-image',
+					'style' => 'width:1020px; height:680px;'
+				]); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
@@ -141,3 +144,82 @@ if ( ! function_exists( 'halink_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+function halink_get_the_post_navigation( $args = array() ) {
+	$args = wp_parse_args(
+		$args,
+		array(
+			'prev_text'          => '%title',
+			'next_text'          => '%title',
+			'in_same_term'       => false,
+			'excluded_terms'     => '',
+			'taxonomy'           => 'category',
+			'screen_reader_text' => __( 'Post navigation' ),
+		)
+	);
+
+	$navigation = '';
+
+	$previous = get_previous_post_link(
+		'<div class="flex-col flex-grow nav-prev text-left">
+			<div class="nav-previous">%link</div>
+		</div>',
+		$args['prev_text'],
+		$args['in_same_term'],
+		$args['excluded_terms'],
+		$args['taxonomy']
+	);
+
+	$next = get_next_post_link(
+		'<div class="nav-next">%link</div>',
+		$args['next_text'],
+		$args['in_same_term'],
+		$args['excluded_terms'],
+		$args['taxonomy']
+	);
+
+	// Only add markup if there's somewhere to navigate to.
+	if ( $previous || $next ) {
+		$navigation = _halink_navigation_markup( $previous . $next, 'post-navigation', $args['screen_reader_text'] );
+	}
+
+	return $navigation;
+}
+
+function halink_post_navigation( $args = array() ) {
+	echo halink_get_the_post_navigation( $args );
+}
+
+function _halink_navigation_markup( $links, $class = 'posts-navigation', $screen_reader_text = '' ) {
+	if ( empty( $screen_reader_text ) ) {
+		$screen_reader_text = __( 'Posts navigation' );
+	}
+
+	$template = '
+	<nav class="navigation-post navigation %1$s" role="navigation" id="nav-below">
+		<h2 class="screen-reader-text">%2$s</h2>
+		<div class="flex-row next-prev-nav bt bb">%3$s</div>
+	</nav>';
+
+	/**
+	 * Filters the navigation markup template.
+	 *
+	 * Note: The filtered template HTML must contain specifiers for the navigation
+	 * class (%1$s), the screen-reader-text value (%2$s), and placement of the
+	 * navigation links (%3$s):
+	 *
+	 *     <nav class="navigation %1$s" role="navigation">
+	 *         <h2 class="screen-reader-text">%2$s</h2>
+	 *         <div class="nav-links">%3$s</div>
+	 *     </nav>
+	 *
+	 * @since 4.4.0
+	 *
+	 * @param string $template The default template.
+	 * @param string $class    The class passed by the calling function.
+	 * @return string Navigation template.
+	 */
+	$template = apply_filters( 'navigation_markup_template', $template, $class );
+
+	return sprintf( $template, sanitize_html_class( $class ), esc_html( $screen_reader_text ), $links );
+}

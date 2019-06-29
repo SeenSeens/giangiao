@@ -212,6 +212,7 @@ h1.sc_title .title-count {
 }
 
 .sc_copy_field {
+    font-family: "Courier New", serif;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;

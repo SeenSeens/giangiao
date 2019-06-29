@@ -494,13 +494,13 @@ class Shortcoder_Admin{
     }
     
     public static function load_codemirror_editor( $value ){
-        echo '<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/codemirror.min.css" rel="stylesheet">';
-        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/codemirror.min.js"></script>';
-        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/htmlmixed/htmlmixed.min.js"></script>';
-        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/css/css.min.js"></script>';
-        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/xml/xml.min.js"></script>';
-        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/javascript/javascript.min.js"></script>';
-        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/selection/active-line.min.js"></script>';
+        echo '<link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.css" rel="stylesheet">';
+        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.js"></script>';
+        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/htmlmixed/htmlmixed.min.js"></script>';
+        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/css/css.min.js"></script>';
+        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/xml/xml.min.js"></script>';
+        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/javascript/javascript.min.js"></script>';
+        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/addon/selection/active-line.min.js"></script>';
         
         echo '<div class="sc_cm_menu"></div>';
         echo '<textarea name="sc_content" id="sc_content">' . esc_textarea( $value ) . '</textarea>';

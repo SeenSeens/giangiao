@@ -40,7 +40,7 @@ $(document).ready(function(){
         var $sc_copy_field = $('.sc_copy_field');
         if( $sc_copy_field.length ){
             var sc_code = $sc_copy_field.val();
-            $sc_copy_field.width(sc_code.length * 6);
+            $sc_copy_field.width(sc_code.length * 8);
         }
         
     }
