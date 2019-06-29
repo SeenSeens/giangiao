@@ -54,7 +54,6 @@
 			
 			?>
 		</div><!-- .entry-content single-page -->
-		<?php the_post_navigation(); ?>
 		<?php halink_post_navigation(); ?>
 	</div>
 </article>

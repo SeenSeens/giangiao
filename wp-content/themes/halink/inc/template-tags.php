@@ -1,11 +1,4 @@
 <?php
-/**
- * Custom template tags for this theme
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package halink
- */
 
 if ( ! function_exists( 'halink_posted_on' ) ) :
 	/**
@@ -171,7 +164,9 @@ function halink_get_the_post_navigation( $args = array() ) {
 	);
 
 	$next = get_next_post_link(
-		'<div class="nav-next">%link</div>',
+		'<div class="flex-col flex-grow nav-next text-right">
+			<div class="nav-next">%link</div>
+		</div>',
 		$args['next_text'],
 		$args['in_same_term'],
 		$args['excluded_terms'],
@@ -201,24 +196,6 @@ function _halink_navigation_markup( $links, $class = 'posts-navigation', $screen
 		<div class="flex-row next-prev-nav bt bb">%3$s</div>
 	</nav>';
 
-	/**
-	 * Filters the navigation markup template.
-	 *
-	 * Note: The filtered template HTML must contain specifiers for the navigation
-	 * class (%1$s), the screen-reader-text value (%2$s), and placement of the
-	 * navigation links (%3$s):
-	 *
-	 *     <nav class="navigation %1$s" role="navigation">
-	 *         <h2 class="screen-reader-text">%2$s</h2>
-	 *         <div class="nav-links">%3$s</div>
-	 *     </nav>
-	 *
-	 * @since 4.4.0
-	 *
-	 * @param string $template The default template.
-	 * @param string $class    The class passed by the calling function.
-	 * @return string Navigation template.
-	 */
 	$template = apply_filters( 'navigation_markup_template', $template, $class );
 
 	return sprintf( $template, sanitize_html_class( $class ), esc_html( $screen_reader_text ), $links );
