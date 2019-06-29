@@ -1,17 +1,13 @@
 <?php
 if ( ! function_exists( 'halink_setup' ) ) :
 	function halink_setup() {
-
-		load_theme_textdomain( 'halink', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
+        load_theme_textdomain( 'halink', get_template_directory() . '/languages' );
+        
 		add_theme_support( 'automatic-feed-links' );
 
 		if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.php' ) ) {
-			// file does not exist... return an error.
 			return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
 		} else {
-			// file exists... require it.
 			require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 		}
 
@@ -24,10 +20,6 @@ if ( ! function_exists( 'halink_setup' ) ) :
 			'menu' => esc_html__( 'Primary', 'halink' ),
 		) );
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
