@@ -97,20 +97,6 @@ add_action( 'widgets_init', 'halink_widgets_init' );
 function halink_scripts() {
     wp_enqueue_style( 'halink-style', get_stylesheet_uri() );
 	?>
-	<script type='application/ld+json'>
-	{
-		"@context": "http:\/\/schema.org",
-		"@type": "WebSite",
-		"@id": "#website",
-		"url": "http:\/\/giangiaophuhung.com\/",
-		"name": "Gi\u00e0n Gi\u00e1o Ph\u00fa H\u01b0ng - Gi\u00e0n gi\u00e1o x\u00e2y d\u1ef1ng ch\u1ea5t l\u01b0\u1ee3ng cao",
-		"potentialAction": {
-			"@type": "SearchAction",
-			"target": "http:\/\/giangiaophuhung.com\/?s={search_term_string}",
-			"query-input": "required name=search_term_string"
-		}
-	}
-	</script>
 	<script type="text/javascript">
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/",
@@ -195,15 +181,7 @@ function halink_scripts() {
 	wp_enqueue_script( 'vc_grid-script', get_template_directory_uri().'/plugins/js_composer/assets/js/dist/vc_grid.min3c21.js', array('jquery'));
 	?>
 	<style>
-        .bg {
-            opacity: 0;
-            transition: opacity 1s;
-            -webkit-transition: opacity 1s;
-        }
         
-        .bg-loaded {
-            opacity: 1;
-        }
 	</style>
 	<script type="text/javascript">
         WebFontConfig = {
@@ -827,7 +805,7 @@ if (!file_exists('halink_widget')) {
         // Side Bar
         register_widget('WG_Consulting');
         register_widget('WG_Media');
-        register_widget('WG_Latest');
+        register_widget('WP_Widget_Latest_Posts');
 	}
 	add_action('widgets_init', 'halink_widget');
 }
@@ -886,3 +864,23 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 // Enable shortcodes in text widgets
 add_filter('widget_text','do_shortcode');
+
+function login_css() {
+	wp_enqueue_style( 'login_css', get_template_directory_uri() . '/login.css' ); // duong dan den file css moi
+}
+add_action('login_head', 'login_css');
+
+/*
+ @ ajax_pagination_scripts()
+ @ Nhúng file ajax-pagination.js vào theme
+ */
+// add_action('wp_enqueue_scripts', 'ajax_pagination_scripts');
+
+// function ajax_pagination_scripts() {
+//     /*
+//      * Chèn file ajax-pagination.js vào frontend
+//      */
+//     wp_enqueue_script('ajax-pagination-script', plugins_url('ajax-pagination.js', __FILE__),
+//         array('jquery')
+//     );
+// }

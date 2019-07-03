@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('header'); ?>
 <main id="main">
     <div id="content" role="main">
     <?php if (is_active_sidebar('index')) {

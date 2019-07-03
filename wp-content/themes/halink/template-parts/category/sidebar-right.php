@@ -33,16 +33,23 @@
                 </div><!-- .col -->
             <?php } ?>
         </div>
+
         <ul class="page-numbers nav-pagination links text-center">
-            <li>
-                <span class='page-number current'>1</span>
-            </li>
-            <li>
-                <a class='page-number' href='page/2/index.html'>2</a>
-            </li>
-            <li>
-                <a class="next page-number" href="page/2/index.html"><i class="icon-angle-right" ></i></a>
-            </li>
+            <?php
+            global $wp_query;
+            $big = 999999999; // need an unlikely integer
+            $translated = __( 'Page', 'halink' ); // Supply translatable string
+            echo paginate_links( array(
+                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format' => '?paged=%#%',
+                'current' => max( 1, get_query_var('paged') ),
+                'total' => $wp_query->max_num_pages,
+                'prev_text' => '',
+                'next_text' => '>',
+                'show_all' => false,
+                'before_page_number' => '<span class="screen-reader-text">'.$translated.' </span>'
+            ) );
+            ?>
         </ul>
     </div> <!-- .large-9 -->
     <?php get_sidebar(); ?>
