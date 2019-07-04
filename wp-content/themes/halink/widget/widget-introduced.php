@@ -5,10 +5,10 @@ class WG_Introduced extends WP_Widget
     { 
         $widget_ops = array(
 			'classname'                   => 'widget_intro',
-			'description'                 => __( 'Introduced' ),
+			'description'                 => __( 'Giới thiệu' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'introduced', __( 'Introduced' ), $widget_ops );
+		parent::__construct( 'introduced', __( 'Giới thiệu' ), $widget_ops );
         $this->alt_option_name = 'WG_Introduced';
     }
     function form($instance)

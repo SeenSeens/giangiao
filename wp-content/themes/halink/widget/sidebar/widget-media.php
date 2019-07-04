@@ -5,10 +5,10 @@ class WG_Media extends WP_Widget
     { 
         $widget_ops = array(
 			'classname'                   => 'widget_media',
-			'description'                 => __( 'Video nổi bật nè! :)' ),
+			'description'                 => __( 'Video nổi bật' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'media', __( 'Video nổi bật nè! :)' ), $widget_ops );
+		parent::__construct( 'media', __( 'Video nổi bật' ), $widget_ops );
         $this->alt_option_name = 'WG_Media';
     }
     function form($instance)
@@ -24,7 +24,6 @@ class WG_Media extends WP_Widget
 			<input type="text" class="widefat" name="<?= $this->get_field_name('title'); ?>" id="<?= $this->get_field_id('title') ?>" value="<?= $title; ?>">
         </p>
         <p>
-			<!-- esc_html_e : Hiển thị văn bản dịch, nếu không có bản dịch văn bản gốc được hiển thị -->
 			<label for="<?= $this->get_field_id('url'); ?>"><?php esc_html_e( 'Đường dẫn vieo', 'halink' ); ?></label>
 			<input type="text" class="widefat" name="<?= $this->get_field_name('url'); ?>" id="<?= $this->get_field_id('url') ?>" value="<?= $url; ?>">
         </p>
@@ -49,7 +48,7 @@ class WG_Media extends WP_Widget
             </span>
             <div class="is-divider small"></div>
                 <div class="textwidget">
-                    <?php echo do_shortcode($url); ?>
+                    <?= do_shortcode($url); ?>
                 </div>
         </aside>
         <?php

@@ -2415,7 +2415,7 @@ li.hide-title>a {
     position: relative;
     background-color: #446084;
     width: 100%;
-    min-height: 30px;
+    margin-top: 15%;
 }
 
 .banner-bg {

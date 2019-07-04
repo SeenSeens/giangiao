@@ -5,10 +5,10 @@ class WG_Contact extends WP_Widget
     { 
         $widget_ops = array(
 			'classname'                   => 'widget_contact',
-			'description'                 => __( 'Contact' ),
+			'description'                 => __( 'Liên hệ' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'contact', __( 'Contact' ), $widget_ops );
+		parent::__construct( 'contact', __( 'Liên hệ' ), $widget_ops );
         $this->alt_option_name = 'WG_Contact';
     }
     function form($instance)

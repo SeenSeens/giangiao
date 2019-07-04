@@ -677,3 +677,7 @@ h5.post-title.is-large {
 .vc_grid.vc_row .vc_grid-item {
     display: block !important;
 }
+
+div#text-box {
+    width: 100%;
+}
