@@ -58,9 +58,9 @@ class WP_Widget_Latest_Posts extends WP_Widget {
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php the_permalink( $Latest_post->ID ); ?>"><?php echo $title; ?></a>
+                        <a href="<?php the_permalink( $Latest_post->ID ); ?>"><?= $title; ?></a>
                         <?php if ( $show_date ) : ?>
-                            <span class="post-date"><?php echo get_the_date( '', $Latest_post->ID ); ?></span>
+                            <span class="post-date"><?= get_the_date( '', $Latest_post->ID ); ?></span>
                         <?php endif; ?>
                     </div>
 				</li>

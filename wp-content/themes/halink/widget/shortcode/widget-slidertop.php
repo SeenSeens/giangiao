@@ -33,7 +33,9 @@ class WG_Slider_Top extends WP_Widget {
         extract($args);
         $short = apply_filters( 'widget_short', $instance['short'] );
         ?>
-        <div><?= do_shortcode("$short"); ?></div> 
+        <div>
+            <?= do_shortcode("$short"); ?>
+        </div> 
         <?php
     }
 }

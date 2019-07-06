@@ -48,7 +48,7 @@ class WG_Footer3 extends WP_Widget
                     <div class="is-divider divider clearfix" style="max-width:1005px;background-color:rgb(15, 116, 188);"></div>
                 </div>
                 <!-- .divider -->
-                <?php echo do_shortcode("$url"); ?>
+                <?= do_shortcode("$url"); ?>
             </div>
         </div>
         <?php

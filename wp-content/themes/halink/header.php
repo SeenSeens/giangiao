@@ -48,35 +48,46 @@
                         </div>
                         <!-- Right Elements -->
                         <div class="flex-col hide-for-medium flex-right">
-                            <ul class="header-nav header-nav-main nav nav-right nav-size-large nav-spacing-medium">
+                            <!-- <ul class="header-nav header-nav-main nav nav-right nav-size-large nav-spacing-medium"> -->
                             <?php
-                            $menuLocations = get_nav_menu_locations();
-                            $menuID = $menuLocations['menu'];
-                            $primaryNav = wp_get_nav_menu_items($menuID);
-                            $id_parent = 0;
-                            foreach ($primaryNav as $navItem) {
-                                if ($navItem->menu_item_parent == $id_parent) {
-                                    echo '<li class="menu-item' . $navItem->ID . '"> <a href="' . $navItem->url . '" title="' . $navItem->title . '" class="nav-top-link">' . $navItem->title . '</a>';
-                                    $sub = "";
-                                    foreach ($primaryNav as $navItem2) {
-                                        if ($navItem2->menu_item_parent == $navItem->ID) {
-                                            $sub .= '<li class="menu-item' . $navItem2->ID . '"> <a href="' . $navItem2->url . '" title="' . $navItem2->title . '">' . $navItem2->title . '</a>';
-                                            $sub2 = "";
-                                            foreach ($primaryNav as $navItem3) {
-                                                if ($navItem3->menu_item_parent == $navItem2->ID) {
-                                                    $sub2 .= '<li class="menu-item' . $navItem3->ID . '"> <a href="' . $navItem3->url . '" title="' . $navItem3->title . '">' . $navItem3->title . '</a></li>';
-                                                }
-                                            }
-                                            $sub .= '<ul>' . $sub2 . '</ul>';
-                                            $sub .= '</li>';
-                                        }
-                                    }
-                                    echo '<ul class="nav-dropdown nav-dropdown-default">' . $sub . '</ul>';
-                                    echo '</li>';
-                                }
-                            }
+                            // $menuLocations = get_nav_menu_locations();
+                            // $menuID = $menuLocations['menu'];
+                            // $primaryNav = wp_get_nav_menu_items($menuID);
+                            // $id_parent = 0;
+                            // foreach ($primaryNav as $navItem) {
+                            //     if ($navItem->menu_item_parent == $id_parent) {
+                            //         echo '<li class="menu-item' . $navItem->ID . '"> <a href="' . $navItem->url . '" title="' . $navItem->title . '" class="nav-top-link">' . $navItem->title . '</a>';
+                            //         $sub = "";
+                            //         foreach ($primaryNav as $navItem2) {
+                            //             if ($navItem2->menu_item_parent == $navItem->ID) {
+                            //                 $sub .= '<li class="menu-item' . $navItem2->ID . '"> <a href="' . $navItem2->url . '" title="' . $navItem2->title . '">' . $navItem2->title . '</a>';
+                            //                 $sub2 = "";
+                            //                 foreach ($primaryNav as $navItem3) {
+                            //                     if ($navItem3->menu_item_parent == $navItem2->ID) {
+                            //                         $sub2 .= '<li class="menu-item' . $navItem3->ID . '"> <a href="' . $navItem3->url . '" title="' . $navItem3->title . '">' . $navItem3->title . '</a></li>';
+                            //                     }
+                            //                 }
+                            //                 $sub .= '<ul>' . $sub2 . '</ul>';
+                            //                 $sub .= '</li>';
+                            //             }
+                            //         }
+                            //         echo '<ul class="nav-dropdown nav-dropdown-default">' . $sub . '</ul>';
+                            //         echo '</li>';
+                            //     }
+                            // }
                             ?>
-                            </ul>
+
+                            <?php 
+                                wp_nav_menu(array(  
+                                'theme_location'  => 'menu',
+                                'container'		=> false,
+                                'menu_class'        => 'header-nav header-nav-main nav nav-right  nav-size-large nav-spacing-medium',
+                                'walker' => new Web366_Nav_Walker
+                                )
+                            ); 
+                            ?>
+
+                            <!-- </ul> -->
                         </div> <!-- Mobile Right Elements -->
                         <div class="flex-col show-for-medium flex-right">
                             <ul class="mobile-nav nav nav-right ">

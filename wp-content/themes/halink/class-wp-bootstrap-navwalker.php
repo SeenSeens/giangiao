@@ -12,8 +12,8 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$n = "\n";
 			}
 			$indent = str_repeat( $t, $depth );	
-
-			$classes = array( 'dropdown-menu' );
+			
+			$classes = array( 'nav-dropdown nav-dropdown-default' );
 
 			$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
@@ -68,7 +68,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
 			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-			$output .= $indent . '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
+			$output .= $indent . '<li ' . $id . $class_names . '>';
 
 			$atts = array();
 
@@ -82,19 +82,23 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 
 			if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && $args->depth > 1 ) {
-				$atts['href']          = '#';
+				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 				$atts['data-toggle']   = 'dropdown';
+				//$atts['class']         = 'dropdown-toggle';
+				$atts['data-hover'] = 'dropdown';
 				$atts['aria-haspopup'] = 'true';
 				$atts['aria-expanded'] = 'false';
 				$atts['class']         = 'dropdown-toggle nav-link';
 				$atts['id']            = 'menu-item-dropdown-' . $item->ID;
 			} else {
-				$atts['href'] = ! empty( $item->url ) ? $item->url : '#';
-
+				//$atts['href'] = ! empty( $item->url ) ? $item->url : '#';
+				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 				if ( $depth > 0 ) {
-					$atts['class'] = 'dropdown-item';
+					//$output .= $indent . '<li class="sss"' . $id . $class_names . '>';
+					$atts['class'] = 'nav-top-link';
 				} else {
-					$atts['class'] = 'nav-link';
+					
+					$atts['class'] = 'nav-top-link';
 				}
 			}
 
@@ -311,3 +315,17 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		}
 	}
 }
+?>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+jQuery(function($) {
+  // Bootstrap menu magic
+  $(window).resize(function() {
+    if ($(window).width() < 768) {
+      $(".dropdown-toggle").attr('data-toggle', 'dropdown');
+    } else {
+      $(".dropdown-toggle").removeAttr('data-toggle dropdown');
+    }
+  });
+});
+</script>
