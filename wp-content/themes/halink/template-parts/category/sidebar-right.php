@@ -10,7 +10,7 @@
                                     <div class="image-cover" style="padding-top:56%;">
                                     <?php the_post_thumbnail('post-thumbnail', [
                                         'class' => 'attachment-medium size-medium wp-post-image',
-                                        'style' => 'width:300px; height:180px',
+                                        //'style' => 'width:300px; height:180px',
                                     ]); ?>
                                     </div>
                                 </div><!-- .box-image -->
@@ -40,16 +40,18 @@
             $big = 999999999; // need an unlikely integer
             $translated = __( 'Page', 'halink' ); // Supply translatable string
             echo paginate_links( array(
-                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'base' => str_replace($big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
                 'format' => '?paged=%#%',
                 'current' => max( 1, get_query_var('paged') ),
                 'total' => $wp_query->max_num_pages,
                 'prev_text' => '',
                 'next_text' => '>',
                 'show_all' => false,
-                'before_page_number' => '<span class="screen-reader-text">'.$translated.' </span>'
+                //'after_page_number' => '<li></li>',
+                //'before_page_number' => '<span class="screen-reader-text">'.$translated.' </span>'
             ) );
             ?>
+            </li> 
         </ul>
     </div> <!-- .large-9 -->
     <?php get_sidebar(); ?>

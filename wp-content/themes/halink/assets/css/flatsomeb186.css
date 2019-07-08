@@ -1408,6 +1408,7 @@ body.boxed .is-sticky-section {
     display: block;
     margin: 0;
     vertical-align: top;
+    /* white-space: initial; */
 }
 
 .nav-dropdown li ul {
@@ -1424,7 +1425,7 @@ li.current-dropdown>.nav-dropdown,
 .no-js li.has-dropdown:hover>.nav-dropdown {
     opacity: 1;
     max-height: inherit;
-    left: -15px;
+    left: -56em;
 }
 
 .nav-right li.current-dropdown:last-child>.nav-dropdown,

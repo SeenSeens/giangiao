@@ -1,8 +1,9 @@
 <!doctype html>
-<html <?php language_attributes(); ?> class="loading-site no-js">
+<html <?php language_attributes(); ?> class="js wf-roboto-n4-active wf-roboto-n5-active wf-roboto-n7-active wf-active js_active  vc_desktop  vc_transform  vc_transform">
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <script>
         (function(html) {
@@ -16,7 +17,7 @@
     <div id="wrapper">
         <header id="header" class="header transparent has-transparent has-sticky sticky-jump">
             <div class="header-wrapper">
-                <div id="masthead" class="header-main nav-dark toggle-nav-dark">
+                <div id="masthead" class="header-main toggle-nav-dark nav-dark">
                     <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
                         <!-- Logo -->
                         <div id="logo" class="flex-col logo">
@@ -47,36 +48,7 @@
                             </ul>
                         </div>
                         <!-- Right Elements -->
-                        <div class="flex-col hide-for-medium flex-right">
-                            <!-- <ul class="header-nav header-nav-main nav nav-right nav-size-large nav-spacing-medium"> -->
-                            <?php
-                            // $menuLocations = get_nav_menu_locations();
-                            // $menuID = $menuLocations['menu'];
-                            // $primaryNav = wp_get_nav_menu_items($menuID);
-                            // $id_parent = 0;
-                            // foreach ($primaryNav as $navItem) {
-                            //     if ($navItem->menu_item_parent == $id_parent) {
-                            //         echo '<li class="menu-item' . $navItem->ID . '"> <a href="' . $navItem->url . '" title="' . $navItem->title . '" class="nav-top-link">' . $navItem->title . '</a>';
-                            //         $sub = "";
-                            //         foreach ($primaryNav as $navItem2) {
-                            //             if ($navItem2->menu_item_parent == $navItem->ID) {
-                            //                 $sub .= '<li class="menu-item' . $navItem2->ID . '"> <a href="' . $navItem2->url . '" title="' . $navItem2->title . '">' . $navItem2->title . '</a>';
-                            //                 $sub2 = "";
-                            //                 foreach ($primaryNav as $navItem3) {
-                            //                     if ($navItem3->menu_item_parent == $navItem2->ID) {
-                            //                         $sub2 .= '<li class="menu-item' . $navItem3->ID . '"> <a href="' . $navItem3->url . '" title="' . $navItem3->title . '">' . $navItem3->title . '</a></li>';
-                            //                     }
-                            //                 }
-                            //                 $sub .= '<ul>' . $sub2 . '</ul>';
-                            //                 $sub .= '</li>';
-                            //             }
-                            //         }
-                            //         echo '<ul class="nav-dropdown nav-dropdown-default">' . $sub . '</ul>';
-                            //         echo '</li>';
-                            //     }
-                            // }
-                            ?>
-
+                        <div class="flex-col hide-for-medium flex-right">   
                             <?php 
                                 wp_nav_menu(array(  
                                 'theme_location'  => 'menu',
@@ -86,8 +58,6 @@
                                 )
                             ); 
                             ?>
-
-                            <!-- </ul> -->
                         </div> <!-- Mobile Right Elements -->
                         <div class="flex-col show-for-medium flex-right">
                             <ul class="mobile-nav nav nav-right ">

@@ -5,15 +5,15 @@ class WG_Home4 extends WP_Widget
     { 
         $widget_ops = array(
 			'classname'                   => 'widget_home_4',
-			'description'                 => __( 'Phần này hiển hiện slider tin tức (mục này test) phần này dùng chung với slider bài viết trên trang chủ' ),
-			'customize_selective_refresh' => true,
+			'description'                 => __( 'Phần này hiển hiện slider tin tức' ),
+			'customize_selective_refresh' => false,
 		);
 		parent::__construct( 'home_4', __( 'Slider tin tức' ), $widget_ops );
         $this->alt_option_name = 'WG_Home4';
     }
     function form($instance)
     {
-        $instance = wp_parse_args($instance);
+        $instance  = wp_parse_args($instance);
         $title     = isset($instance['title']) ? esc_attr($instance['title']) : '';
         $categories     = isset($instance['categories']) ? esc_attr($instance['categories']) : '';
         $number    = isset($instance['number']) ? absint($instance['number']) : 5;
