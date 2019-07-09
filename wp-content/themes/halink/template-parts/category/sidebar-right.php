@@ -47,8 +47,6 @@
                 'prev_text' => '',
                 'next_text' => '>',
                 'show_all' => false,
-                //'after_page_number' => '<li></li>',
-                //'before_page_number' => '<span class="screen-reader-text">'.$translated.' </span>'
             ) );
             ?>
             </li> 
