@@ -180,10 +180,8 @@ function halink_scripts() {
 	wp_enqueue_script( 'imagesloaded-script', get_template_directory_uri().'/plugins/js_composer/assets/lib/bower/imagesloaded/imagesloaded.pkgd.min1f93.js', array('jquery'));
 	wp_enqueue_script( 'waypoints-script', get_template_directory_uri().'/plugins/js_composer/assets/lib/waypoints/waypoints.min3c21.js', array('jquery'));
 	//wp_enqueue_script( 'vc_grid-script', get_template_directory_uri().'/plugins/js_composer/assets/js/dist/vc_grid.min3c21.js', array('jquery'));
+	wp_enqueue_script( 'slider-script', get_template_directory_uri().'/js/slider.js', array('jquery'));
 	?>
-	<style>
-        
-	</style>
 	<script type="text/javascript">
         WebFontConfig = {
             google: {

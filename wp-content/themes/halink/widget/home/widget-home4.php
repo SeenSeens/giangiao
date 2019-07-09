@@ -6,7 +6,7 @@ class WG_Home4 extends WP_Widget
         $widget_ops = array(
 			'classname'                   => 'widget_home_4',
 			'description'                 => __( 'Phần này hiển hiện slider tin tức' ),
-			'customize_selective_refresh' => false,
+			'customize_selective_refresh' => true,
 		);
 		parent::__construct( 'home_4', __( 'Slider tin tức' ), $widget_ops );
         $this->alt_option_name = 'WG_Home4';
@@ -127,7 +127,7 @@ class WG_Home4 extends WP_Widget
                                                                         <div class="vc_gitem_row vc_row vc_gitem-row-position-top">
                                                                             <div class="vc_col-sm-12 vc_gitem-col vc_gitem-col-align-">
                                                                                 <div class="vc_custom_heading vc_custom_1497675477789 vc_gitem-post-data vc_gitem-post-data-source-post_title">
-                                                                                    <h4 style="text-align: left"><?php the_title(); ?></h4>
+                                                                                    <h4 style="text-align: left"><?= the_title(); ?></h4>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
