@@ -1067,12 +1067,40 @@ class WPLPFront
         if (is_multisite()) {
             if ('src_category_list' !== $this->widget->settings['source_type']) {
                 if (is_array($posts)) {
-                    usort(
-                        $posts,
-                        function ($a, $b) {
-                            return strtotime($b->post_date) - strtotime($a->post_date);
+                    if ($order_by === 'title') {
+                        if ($order === 'ASC') {
+                            usort(
+                                $posts,
+                                function ($a, $b) {
+                                    return strtotime($b->post_title) - strtotime($a->post_title);
+                                }
+                            );
+                        } else {
+                            usort(
+                                $posts,
+                                function ($a, $b) {
+                                    return strtotime($a->post_title) - strtotime($b->post_title);
+                                }
+                            );
                         }
-                    );
+                    } elseif ($order_by === 'date') {
+                        if ($order === 'ASC') {
+                            usort(
+                                $posts,
+                                function ($a, $b) {
+                                    return strtotime($b->post_date) - strtotime($a->post_date);
+                                }
+                            );
+                        } else {
+                            usort(
+                                $posts,
+                                function ($a, $b) {
+                                    return strtotime($a->post_date) - strtotime($b->post_date);
+                                }
+                            );
+                        }
+                    }
+
                     $posts = array_slice($posts, 0, $this->widget->settings['max_elts'], true);
                 }
             }

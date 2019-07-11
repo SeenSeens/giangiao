@@ -20,16 +20,6 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-.bg {
-    opacity: 0;
-    transition: opacity 1s;
-    -webkit-transition: opacity 1s;
-}
-
-.bg-loaded {
-    opacity: 1;
-}
-
 
 /* =============================== */
 

@@ -8,6 +8,11 @@
     <div class="row" id="row-1294936103">
         <div class="col small-12 large-12">
             <div class="col-inner">
+                <a class="nav-top-link">
+                    <div class="col small-12 large-12">
+                        <div class="col-inner"></div>
+                    </div>
+                </a>
                 <?php if (is_active_sidebar('index-1')) {
                     dynamic_sidebar('index-1');
                 } ?>

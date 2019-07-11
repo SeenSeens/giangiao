@@ -3,11 +3,10 @@ class Web366_Nav_Walker extends Walker_Nav_Menu {
 	public function start_lvl( &$output, $depth = 0,  $args = array() )
 	{
 		if($depth==0) {
-			$output .= '<ul data-depth="'.$depth.'" class="nav-dropdown nav-dropdown-default" style="">';
+			$output .= '<ul class="nav-dropdown nav-dropdown-default">';
 		} else {
-			$output .= '<ul data-depth="'.$depth.'" class="nav-column nav-dropdown-default">';
+			$output .= '<ul class="nav-column nav-dropdown-default">';
 		}
-
 	}
 	public function end_lvl( &$output, $depth = 0, $args = array() )
 	{
@@ -26,8 +25,7 @@ class Web366_Nav_Walker extends Walker_Nav_Menu {
 		if($has_child){
 			$classes[] = 'has-dropdown'; 
 			if($depth==1) {
-				$classes[] = 'nav-dropdown-col';
-				
+				$classes[] = 'nav-dropdown-col';				
 			}
 		}
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
@@ -45,8 +43,7 @@ class Web366_Nav_Walker extends Walker_Nav_Menu {
 			}
 		}				
 		$item_output = $args->before;
-		if($depth==2) {$item_output .= '<a '. $attributes .$item->classes[0].'">';}
-		else {$item_output .= '<a '. $attributes .' class="nav-top-link'.$item->classes[0].'">';}
+		$item_output .= '<a '. $attributes . ' class="nav-top-link'.$item->classes[0].'">';
 		$item_output .= $args->link_before . apply_filters( 'the_title', '', $item->ID ) . $item->title . $args->link_after;
 		if($has_child){ 
 			if($depth==1){
@@ -57,7 +54,7 @@ class Web366_Nav_Walker extends Walker_Nav_Menu {
 				$item_output = '';
 				$item_output .= '<a href="#" class="'.$item->classes[0].'">';
 				$item_output .= $args->link_before . apply_filters( 'the_title', '', $item->ID ) . $item->title;
-				$item_output .= '<i class="icon-angle-down" aria-hidden="true"></i>';
+				$item_output .= '<i class="icon-angle-down"></i>';
 			}
 		}
 		$item_output .= '</a>';

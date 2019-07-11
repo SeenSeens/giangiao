@@ -199,7 +199,6 @@ class WPLPAdmin
          * Register our shortcode
          */
         add_shortcode('frontpage_news', array($this, 'applyShortcode'));
-        add_filter('wplp_src_category_args', array($this, 'srcCategoryArgs'), 10, 2);
         if (is_admin()) {
             /**
              * Customize custom post editor screen
@@ -274,23 +273,6 @@ class WPLPAdmin
              */
             add_action('the_posts', array($this, 'prefixEnqueue'), 100);
         }
-    }
-
-    /**
-     * Custom params to get posts
-     *
-     * @param array $args     Params
-     * @param array $settings Block settings
-     *
-     * @return array
-     */
-    public function srcCategoryArgs($args, $settings)
-    {
-        if (defined('ICL_SITEPRESS_VERSION') && ICL_SITEPRESS_VERSION) {
-            $args['suppress_filters'] = false;
-        }
-
-        return $args;
     }
 
     /**

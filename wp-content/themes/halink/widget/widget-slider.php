@@ -73,7 +73,6 @@ class WG_Slider extends WP_Widget
         $instance['categories'] = $_POST[$this->get_field_id('categories')];
         $instance['number']    = (int)$new_instance['number'];
         return $instance;
-
     }
     function widget($args, $instance)
     {
