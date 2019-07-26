@@ -3,7 +3,7 @@ Contributors: JoomUnited
 Tags: latest post, news widget, recent posts, posts, recent post widget, news posts, latest page, custom content, previous posts, page, featured posts, article display, news display, news slider, page display, post display, article display, frontpage news, news
 Requires at least: 4.0
 Tested up to: 5.2.2
-Stable tag: 4.5.7
+Stable tag: 4.5.8
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -149,13 +149,16 @@ Yes the support has been added since the 3.5.2 version.
 
 == Changelog ==
 
+= 4.5.8 =
+ * Fix : Sort by title & date on WP  multi-site
+
 = 4.5.7 =
  * Fix : Jutranslation url
  * Fix : Conflict with WPML plugin
  * Fix : Sort on multiple site
 
 = 4.5.6 =
- * Fix : List categories in block settings on multiple site
+ * Fix : List categories in block settings on WP multiple site
  * Fix : List pages in block settings on multiple site
 
 = 4.5.5 =

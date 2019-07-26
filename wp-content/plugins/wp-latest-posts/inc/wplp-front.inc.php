@@ -1072,14 +1072,24 @@ class WPLPFront
                             usort(
                                 $posts,
                                 function ($a, $b) {
-                                    return strtotime($b->post_title) - strtotime($a->post_title);
+                                    $al = strtolower($a->post_title);
+                                    $bl = strtolower($b->post_title);
+                                    if ($al === $bl) {
+                                        return 0;
+                                    }
+                                    return ($al > $bl) ? +1 : -1;
                                 }
                             );
                         } else {
                             usort(
                                 $posts,
                                 function ($a, $b) {
-                                    return strtotime($a->post_title) - strtotime($b->post_title);
+                                    $al = strtolower($a->post_title);
+                                    $bl = strtolower($b->post_title);
+                                    if ($al === $bl) {
+                                        return 0;
+                                    }
+                                    return ($al < $bl) ? +1 : -1;
                                 }
                             );
                         }
@@ -1088,14 +1098,14 @@ class WPLPFront
                             usort(
                                 $posts,
                                 function ($a, $b) {
-                                    return strtotime($b->post_date) - strtotime($a->post_date);
+                                    return strtotime($a->post_date) - strtotime($b->post_date);
                                 }
                             );
                         } else {
                             usort(
                                 $posts,
                                 function ($a, $b) {
-                                    return strtotime($a->post_date) - strtotime($b->post_date);
+                                    return strtotime($b->post_date) - strtotime($a->post_date);
                                 }
                             );
                         }

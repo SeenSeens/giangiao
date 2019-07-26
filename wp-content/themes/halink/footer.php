@@ -7,7 +7,7 @@
                     <div class="row row-small row-full-width align-middle align-right" id="row-2086901788">
                         <div class="col float-col-1 medium-3 small-6 large-3">
                             <div class="col-inner text-center dark">
-                                <h3><i class="fa fa-mobile" aria-hidden="true"></i> <span style="color: #ff0000;"><a href="tel:0929012012">0929 012 012</a></span></h3>
+                                <h3><i class="fa fa-mobile" aria-hidden="true"></i> <span style="color: #ff0000;"><a href="tel:0909156858">0909 156 858 </a></span></h3>
                             </div>
                         </div>
                         <div class="col medium-3 small-6 large-3">
@@ -63,7 +63,7 @@
             <div class="container clearfix">
                 <div class="footer-primary pull-left">
                     <div class="copyright-footer">
-                        Copyright <?= date('Y'); ?> © <a href="index.html">giangiaophuhung.com</a>, All rights reserved. </div>
+                        Copyright <?= date('Y'); ?> © <a href="<?php bloginfo('url');?>"><?php bloginfo('url'); ?></a>, All rights reserved. </div>
                 </div>
                 <!-- .left -->
             </div>

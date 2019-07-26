@@ -6,7 +6,7 @@ RewriteBase /giangiao/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+RewriteRule . /giangiao/index.php [L]
 </IfModule>
 
 # END WordPress

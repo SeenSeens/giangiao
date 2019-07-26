@@ -31,7 +31,7 @@
                         </div>
                         <!-- Mobile Left Elements -->
                         <div class="flex-col show-for-medium flex-left">
-                            <ul class="mobile-nav nav nav-left ">
+                            <ul class="mobile-nav nav nav-left">
                                 <li class="nav-icon has-icon">
                                     <div class="header-button">
                                         <a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color="dark" class="icon primary button round is-small" aria-controls="main-menu" aria-expanded="false">
@@ -41,6 +41,22 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- Mobile Sidebar -->
+                        <!-- Mobile Sidebar -->
+                        <div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
+                            <div class="sidebar-menu no-scrollbar ">
+                            <?php 
+                                wp_nav_menu(array(  
+                                'theme_location'  => 'menu',
+                                'container'		=> false,
+                                'menu_class'        => 'nav nav-sidebar nav-vertical nav-uppercase',
+                                'walker' => new Mobile_Nav_Walker
+                                )
+                            ); 
+                            ?>
+                            </div><!-- inner -->
+                        </div><!-- #mobile-menu -->
+                        <!-- END Mobile Sidebar -->
                         <!-- Left Elements -->
                         <div class="flex-col hide-for-medium flex-left flex-grow">
                             <ul class="header-nav header-nav-main nav nav-left nav-size-large nav-spacing-medium">

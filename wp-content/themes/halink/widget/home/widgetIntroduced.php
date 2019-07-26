@@ -107,10 +107,10 @@ class WG_Introduced extends WP_Widget
                                                     </span>
                                                 </h2>
                                                 <p>
-                                                    <span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12pt;"><?= $content_line_1; ?></span>
+                                                    <span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12pt; a:hover{color: #1DBB46;}"><?= $content_line_1; ?></span>
                                                 </p>
                                                 <p>
-                                                    <span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12pt;"><?= $content_line_2; ?></span>
+                                                    <span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: 12pt; a:hover{color: #1DBB46;}"><?= $content_line_2; ?></span>
                                                 </p>
                                             </div>
                                         </div>

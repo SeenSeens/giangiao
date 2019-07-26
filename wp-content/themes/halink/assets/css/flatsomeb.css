@@ -5322,7 +5322,7 @@ a.plain {
 a:hover,
 a.remove:hover,
 a.icon-circle:hover {
-    color: #000;
+    color: #21BC4A;
 }
 
 .dark a,
@@ -8946,10 +8946,6 @@ li .comment-respond small {
 
 .footer-1 {
     background-color: #fff;
-}
-
-.footer-2 {
-    background-color: #777;
 }
 
 .footer-1,

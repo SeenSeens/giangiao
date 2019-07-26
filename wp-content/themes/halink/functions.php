@@ -17,7 +17,7 @@ if ( ! function_exists( 'halink_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu' => esc_html__( 'Primary', 'halink' ),
+            'menu' => esc_html__( 'Primary', 'halink' ),
 		) );
 
 		add_theme_support( 'html5', array(
@@ -93,27 +93,11 @@ add_action( 'widgets_init', 'halink_widgets_init' );
 
 function halink_scripts() {
     wp_enqueue_style( 'halink-style', get_stylesheet_uri() );
-	?>
-	<style type="text/css">
-        img.wp-smiley,
-        img.emoji {
-            display: inline !important;
-            border: none !important;
-            box-shadow: none !important;
-            height: 1em !important;
-            width: 1em !important;
-            margin: 0 .07em !important;
-            vertical-align: -0.1em !important;
-            background: none !important;
-            padding: 0 !important;
-        }
-    </style>
-	<?php
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '3.4.1', true );
+    wp_enqueue_style( 'bootstrap-style', get_template_directory_uri().'/bootstrap/css/bootstrap.min.css', array(), '3.4.1', true );
 	wp_enqueue_style( 'flatsome-icons', get_template_directory_uri().'/assets/css/fl-icons.css', 'all' );
 	wp_enqueue_style( 'composer_front', get_template_directory_uri().'/plugins/js_composer/assets/css/js_composer.min.css', 'all' );
-	wp_enqueue_style( 'bsf-Defaults', get_template_directory_uri().'/uploads/smile_fonts/Defaults/Defaults.css', 'all' );
-	?><link rel='stylesheet' id='ultimate-google-fonts-css' href='https://fonts.googleapis.com/css?family=Roboto+Condensed&amp;subset=vietnamese,latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext' type='text/css' media='all' /><?php
+    wp_enqueue_style( 'bsf-Defaults', get_template_directory_uri().'/css/Defaults.css', array(), '5.2.2', true );
+    wp_enqueue_style( 'ultimate-google-fonts', get_template_directory_uri().'/css/css.css', 'all' );
 	wp_enqueue_style( 'ultimate-style', get_template_directory_uri().'/plugins/Ultimate_VC_Addons/assets/min-css/ultimate.min.css', 'all' );
 	wp_enqueue_style( 'ult-icons', get_template_directory_uri().'/plugins/Ultimate_VC_Addons/assets/css/iconsf.css', 'all' );
 	wp_enqueue_style( 'flatsome-main', get_template_directory_uri().'/assets/css/flatsomeb.css', 'all' );
@@ -664,12 +648,12 @@ function halink_scripts() {
     />
     <?php
     wp_enqueue_style( 'prettyphoto-style', get_template_directory_uri().'/plugins/js_composer/assets/lib/prettyphoto/css/prettyPhoto.min.css', 'all' );
-    wp_enqueue_style( 'carousel-style', get_template_directory_uri().'/plugins/js_composer/assets/lib/owl-carousel2-dist/assets/owl.min.css', 'all' );
+    wp_enqueue_style( 'carousel-style', get_template_directory_uri().'/OwlCarousel/dist/assets/owl.carousel.min.css', 'all' );
+    wp_enqueue_style( 'carousel-style-theme', get_template_directory_uri().'/OwlCarousel/dist/assets/owl.theme.default.min.css', 'all' );
+    wp_enqueue_style( 'carousel-style-theme-green', get_template_directory_uri().'/OwlCarousel/dist/assets/owl.theme.green.min.css', 'all' );
     wp_enqueue_style( 'animate-style', get_template_directory_uri().'/plugins/js_composer/assets/lib/bower/animate-css/animate.min.css', 'all' );
     ?>
-
-
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/",
             "ext": ".png",
@@ -709,12 +693,12 @@ function halink_scripts() {
                 "complete" === b.readyState && c.readyCallback()
             })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji)))
         }(window, document, window._wpemojiSettings);
-    </script>
+    </script> -->
     <?php 
     wp_enqueue_script( 'jquery-ui', get_template_directory_uri().'/js/core.min.js', array('jquery'));
     wp_enqueue_script( 'ultimate-script', get_template_directory_uri().'/plugins/Ultimate_VC_Addons/assets/min-js/ultimate.min.js', array('jquery'));
     ?>
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         WebFontConfig = {
             google: {
                 families: ["Roboto:regular,500", "Roboto:regular,regular", "Roboto:regular,700", "Roboto", ]
@@ -722,28 +706,28 @@ function halink_scripts() {
         };
         (function() {
             var wf = document.createElement('script');
-            wf.src = '../ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.src = 'http://127.0.0.1/giangiao/wp-content/themes/halink/js/webfont.js';
             wf.type = 'text/javascript';
             wf.async = 'true';
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(wf, s);
         })();
-    </script> -->
-    <!-- <script>
+    </script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
         gtag('config', 'UA-103599798-1');
-    </script> -->
+    </script>
     <?php
     wp_enqueue_script( 'hoverIntent-script', get_template_directory_uri().'/js/hoverIntent.min.js', array('jquery'));
     wp_enqueue_script( 'flatsome-script', get_template_directory_uri().'/assets/js/flatsomeb.js', array('jquery'));
     wp_enqueue_script( 'composer-script', get_template_directory_uri().'/plugins/js_composer/assets/js/dist/js_composer_front.min.js', array('jquery'));
     wp_enqueue_script( 'prettyPhoto-script', get_template_directory_uri().'/plugins/js_composer/assets/lib/prettyphoto/js/jquery.prettyPhoto.min.js', array('jquery'));
     wp_enqueue_script( 'twbsPagination-script', get_template_directory_uri().'/plugins/js_composer/assets/lib/bower/twbs-pagination/jquery.twbsPagination.min.js', array('jquery'));
-    wp_enqueue_script( 'carousel-script', get_template_directory_uri().'/plugins/js_composer/assets/lib/owl-carousel2-dist/owl.carousel.min.js', array('jquery'));
+    wp_enqueue_script( 'carousel-script', get_template_directory_uri().'/OwlCarousel/dist/owl.carousel.min.js', array('jquery'), '2.3.4', true);
     wp_enqueue_script( 'imagesloaded-script', get_template_directory_uri().'/plugins/js_composer/assets/lib/bower/imagesloaded/imagesloaded.pkgd.min.js', array('jquery'));
     wp_enqueue_script( 'waypoints-script', get_template_directory_uri().'/plugins/js_composer/assets/lib/waypoints/waypoints.min.js', array('jquery'));
     wp_enqueue_script( 'vc_grid-script', get_template_directory_uri().'/plugins/js_composer/assets/js/dist/vc_grid.min.js', array('jquery'));
@@ -799,6 +783,7 @@ require_once get_parent_theme_file_path('/widget/home/widgetProducts.php');
 require_once get_parent_theme_file_path('/widget/home/widgetProject.php');
 require_once get_parent_theme_file_path('/widget/home/widgetNews.php');
 require_once get_parent_theme_file_path('/widget/home/widgetPartner.php');
+require_once get_parent_theme_file_path('/widget/home/widgetTest.php');
 // Sider Bar
 require_once get_parent_theme_file_path('/widget/sidebar/widget-consulting.php');
 require_once get_parent_theme_file_path('/widget/sidebar/widget-media.php');
@@ -819,6 +804,7 @@ if (!file_exists('halink_widget')) {
         register_widget('WG_Project');
         register_widget('WG_News');
         register_widget('WG_Partner');
+        register_widget('WG_Test');
         // Side Bar
         register_widget('WG_Consulting');
         register_widget('WG_Media');
@@ -887,19 +873,7 @@ function login_css() {
 }
 add_action('login_head', 'login_css');
 
-/*
- @ ajax_pagination_scripts()
- @ Nhúng file ajax-pagination.js vào theme
- */
-// add_action('wp_enqueue_scripts', 'ajax_pagination_scripts');
-
-// function ajax_pagination_scripts() {
-//     /*
-//      * Chèn file ajax-pagination.js vào frontend
-//      */
-//     wp_enqueue_script('ajax-pagination-script', plugins_url('ajax-pagination.js', __FILE__),
-//         array('jquery')
-//     );
-// }
-
-require get_template_directory() . '/inc/Web366_Nav_Walker.php'; 
+require get_template_directory() . '/inc/Web366_Nav_Walker.php';
+require get_template_directory() . '/inc/Mobile_Nav_Walker.php';
+require get_template_directory() . '/inc/CPT.php';
+require get_template_directory() . '/inc/register-cpt.php';

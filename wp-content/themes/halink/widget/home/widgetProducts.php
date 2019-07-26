@@ -114,7 +114,7 @@ class WG_Products extends WP_Widget {
                                         <div class="wpb_text_column wpb_content_element tat">
                                             <div class="wpb_wrapper">
                                                 <p style="text-align: center;">
-                                                <span style="font-family: tahoma, arial, helvetica, sans-serif; color: #333333;"><?= $describe; ?></span>
+                                                <span style="font-family: tahoma, arial, helvetica, sans-serif; color: #4BA578;"><?= $describe; ?></span>
                                                 </p>
                                             </div>
                                         </div>

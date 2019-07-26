@@ -181,12 +181,12 @@ class WG_Project extends WP_Widget
                                         <div class="vc_grid-owl-prev none vc_grid-nav-prev-inside disabled"></div>
                                         <div class="vc_grid-owl-next none vc_grid-nav-next-inside"></div>
                                     </div>
-                                    <div class="vc_grid-owl-dots vc_grid-radio_dots vc_grid-owl-dots-color-grey">
+                                    <!-- <div class="vc_grid-owl-dots vc_grid-radio_dots vc_grid-owl-dots-color-grey">
                                         <div class="vc_grid-owl-dot active"><span></span></div>
                                         <div class="vc_grid-owl-dot"><span></span></div>
                                         <div class="vc_grid-owl-dot"><span></span></div>
                                         <div class="vc_grid-owl-dot"><span></span></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

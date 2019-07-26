@@ -43,7 +43,7 @@ class WG_Media extends WP_Widget
         $url = apply_filters( 'widget_url', $instance['url'] );      
         ?>
         <aside id="text-5" class="widget widget_text">
-            <span class="widget-title ">
+            <span class="widget-title">
                 <span><?= $title; ?></span>
             </span>
             <div class="is-divider small"></div>
